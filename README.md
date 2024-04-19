@@ -1,7 +1,7 @@
 # Learn-Java
 <body>
 
-  <h2>Introduction to Java</h2>
+  <h3>Introduction to Java</h3>
 
 Welcome to the world of Java programming!
 
