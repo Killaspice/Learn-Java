@@ -124,11 +124,8 @@ We represent each student as an instance, or object, of the Student class.
 
 This is object-oriented programming because programs are built around objects and their interactions. An object contains state and behavior.
 
-<img src= "https://content.codecademy.com/courses/learn-java/revised-2019/diagram%20of%20an%20object-01.png", width = 50%> 
+<img src= "https://content.codecademy.com/courses/learn-java/revised-2019/diagram%20of%20an%20object-01.png"> 
 
-
-
-Diagram of a generic software object
 
 Classes are a blueprint for objects. Blueprints detail the general structure. For example, all students have an ID, all courses can enroll a student, etc.
 
@@ -143,7 +140,9 @@ What should a savings account do?
 
 Deposit money.
 Withdraw money.
-Diagram of a Savings Account as software object
+
+[Diagram of a Savings Account as software object](https://content.codecademy.com/courses/learn-java/revised-2019/diagram%20of%20an%20object-02.png)
+
 
 Imagine two people have accounts that are instances of the SavingsAccount class. They share behavior (how they deposit and withdraw) but have individual state (their balances), and even with the same balance amount these accounts are separate entities.
 
