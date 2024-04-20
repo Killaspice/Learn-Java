@@ -141,7 +141,7 @@ What should a savings account do?
 Deposit money.
 Withdraw money.
 
-[Diagram of a Savings Account as software object](https://content.codecademy.com/courses/learn-java/revised-2019/diagram%20of%20an%20object-02.png)
+<img src= "https://content.codecademy.com/courses/learn-java/revised-2019/diagram%20of%20an%20object-02.png">
 
 
 Imagine two people have accounts that are instances of the SavingsAccount class. They share behavior (how they deposit and withdraw) but have individual state (their balances), and even with the same balance amount these accounts are separate entities.
