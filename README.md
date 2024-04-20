@@ -124,7 +124,9 @@ We represent each student as an instance, or object, of the Student class.
 
 This is object-oriented programming because programs are built around objects and their interactions. An object contains state and behavior.
 
-<img src= "https://content.codecademy.com/courses/learn-java/revised-2019/diagram%20of%20an%20object-01.png"> 
+<img src= "https://content.codecademy.com/courses/learn-java/revised-2019/diagram%20of%20an%20object-01.png", width = 50%> 
+
+
 
 Diagram of a generic software object
 
