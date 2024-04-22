@@ -1292,7 +1292,7 @@ shoppingCart.set(0, "Tweed Cape");
 
 
 
-<h3>Removing an Item</h3>
+<h3>Removing an Item - remove() method </h3>
 
 What if we wanted to get rid of an entry altogether? For arrays, we would have to make a completely new array without the value.
 
@@ -1369,10 +1369,47 @@ class ToDos {
 ```
 
 
+<h3>Getting an Item's Index - indexOf() method</h3>
+
+What if we had a really large list and wanted to know the position of a certain element in it? For instance, what if we had an ArrayList detectives with the names of fictional detectives in chronological order, and we wanted to know what position "Fletcher" was.
+
+```
+// detectives holds ["Holmes", "Poirot", "Marple", "Spade", "Fletcher", "Conan", "Ramotswe"];
+System.out.println(detectives.indexOf("Fletcher"));
+```
+
+This code would print 4, since "Fletcher" is at index 4 of the detectives ArrayList.
 
 
+```
+import java.util.ArrayList;
 
+class ToDos {
+    
+  public static void main(String[] args) {
+    
+    // Sherlock
+    ArrayList<String> sherlocksToDos = new ArrayList<String>();
+    
+    sherlocksToDos.add("visit the crime scene");
+    sherlocksToDos.add("play violin");
+    sherlocksToDos.add("interview suspects");
+    sherlocksToDos.add("listen to Dr. Watson for amusement");
+    sherlocksToDos.add("solve the case");
+    sherlocksToDos.add("apprehend the criminal");
+    
+    sherlocksToDos.remove("visit the crime scene");
+    
+    // Calculate to-dos until case is solved:
+    System.out.println(sherlocksToDos.indexOf("solve the case"));  // answer
+      
+    // Change the value printed:
+    System.out.println("PRINT THE ANSWER HERE");
 
+  }
+  
+}
+```
 
 
 
