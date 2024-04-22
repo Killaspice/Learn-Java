@@ -1233,9 +1233,11 @@ class ToDos {
 
 With arrays, we can use bracket notation to access a value at a particular index:
 
+```
 double[] ratings = {3.2, 2.5, 1.7};
 
 System.out.println(ratings[1]);
+```
 
 This code prints 2.5, the value at index 1 of the array.
 
