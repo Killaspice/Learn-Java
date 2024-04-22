@@ -473,6 +473,144 @@ if (!false) {
 <br>
 <br>
 
+<h2>Introduction to Arrays</h2>
+
+We have seen how to store single pieces of data in variables. What happens when we need to store a group of data? What if we have a list of students in a classroom? Or a ranking of the top 10 horses finishing a horse race?
+
+If we were storing 5 lottery ticket numbers, for example, we could create a different variable for each value:
+
+```
+int firstNumber = 4;
+int secondNumber = 8;
+int thirdNumber = 15;
+int fourthNumber = 16;
+int fifthNumber = 23;
+```
+
+That is a lot of ungainly repeated code. What if we had a hundred lottery numbers? It is more clean and convenient to use a Java array to store the data as a list.
+
+An array holds a fixed number of values of one type. Arrays hold doubles, ints, booleans, or any other primitives. Arrays can also contain Strings as well as object references!
+
+Each index of an array corresponds with a different value. Here is a diagram of an array filled with integer values:
+
+<img src="https://content.codecademy.com/courses/learn-java/revised-2019/array-introduction.png">;
+
+Notice that the indexes start at 0! The element at index 0 is 4, while the element at index 1 is 8. This array has a length of 5, since it holds five elements, but the highest index of the array is 4.
+
+Let’s explore how to create and use arrays in Java, so that we can store all of our Java data types.
+
+<br>
+<br>
+
+
+
+
+
+
+<h3>Creating an Array Explicitly</h3>
+
+Imagine that we’re using a program to keep track of the prices of different clothing items we want to buy. We would want a list of the prices and a list of the items they correspond to. To create an array, we provide a name and declare the type of data it holds:
+
+```
+double[] prices;
+```
+
+Just like with variables, we can declare and initialize in the same line. This allows us to explicitly initialize the array to contain the data we want to store :
+
+```
+double[] prices = {13.15, 15.87, 14.22, 16.66};
+```
+
+We can use arrays to hold Strings and other objects as well as primitives:
+
+```
+String[] clothingItems = {"Tank Top", "Beanie", "Funny Socks", "Corduroys"};
+```
+
+
+
+<br>
+<br>
+
+
+
+<h3>Importing Arrays</h3>
+
+When we printed out the array we created in the last exercise, we saw a memory address that did not help us understand what was contained in the array.
+
+If we want to have a more descriptive printout of the array itself, we need a toString() method that is provided by the Arrays package in Java.
+
+```
+import java.util.Arrays;
+```
+
+We put this at the top of the file, before we even define the class!
+
+When we import a package in Java, we are making all of the methods of that package available in our code.
+
+The Arrays package has many useful methods, including Arrays.toString(). When we pass an array into Arrays.toString(), we can see the contents of the array printed out:
+
+```
+import java.util.Arrays;
+
+public class Lottery(){
+  
+  public static void main(String[] args){
+    int[] lotteryNumbers = {4, 8, 15, 16, 23, 42};
+    String betterPrintout = Arrays.toString(lotteryNumbers);
+    System.out.println(betterPrintout);
+  }
+
+}
+```
+
+This code will print:
+
+[4, 8, 15, 16, 23, 42]
+
+Instructions
+
+1. In order to make our printout of the topics array more helpful, we are going to want to use the toString() method from the Arrays package.
+
+To use it, we first must import the Arrays package from java.util. Import the package at the top of the Newsfeed.java file.
+
+2. Now that you have the Arrays package, use its toString() method to print out the topics array in the main() method.
+
+
+```
+// import the Arrays package here:
+import java.util.Arrays;
+
+public class Newsfeed {
+  
+  
+  public Newsfeed(){
+    
+  }
+    
+  public String[] getTopics(){
+    String[] topics = {"Opinion", "Tech", "Science", "Health"};
+    return topics;
+  }
+  
+
+  public static void main(String[] args){
+    Newsfeed sampleFeed = new Newsfeed();
+    String[] topics = sampleFeed.getTopics();
+    System.out.println(topics);
+    System.out.println(Arrays.toString(topics));
+  }
+}
+
+```
+
+
+
+
+
+
+<br>
+<br>
 
 <h3>Get Element By Index</h3>
 
