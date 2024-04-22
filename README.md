@@ -375,6 +375,29 @@ switch block runs if condition value matches case value
 
 
 
+<br>
+<br>
+
+
+<h2>CONDITIONAL OPERATORS</h2>
+
+Introduction to Conditional Operators
+
+Java includes operators that only use boolean values. These conditional operators help simplify expressions containing complex boolean relationships by reducing multiple boolean values to a single value: true or false.
+
+For example, what if we want to run a code block only if multiple conditions are true. We could use the AND operator: &&.
+
+Or, we want to run a code block if at least one of two conditions are true. We could use the OR operator: ||.
+
+Finally, we can produce the opposite value, where true becomes false and false becomes true, with the NOT operator: !.
+
+Understanding these complex relationships can feel overwhelming at first. Luckily, truth tables, like the ones seen to the right, can assist us in determining the relationship between two boolean-based conditions.
+
+In this lesson, we’ll explore each of these conditional operators to see how they can be implemented into our conditional statements.
+
+
+
+
 
 
 </body>
