@@ -1036,8 +1036,26 @@ ages = new ArrayList<Integer>();
 ArrayList<String> babyNames = new ArrayList<String>();
 ```
 
+<br>
+<br>
 
+Question: Create a new ArrayList that will contain String elements and call it toDoList.
 
+```
+import java.util.ArrayList;
+
+class ToDos {
+  
+  public static void main(String[] args) {
+    
+    // Create toDoList below:
+   
+
+    ArrayList<String> toDoList = new ArrayList<String>();  // the answer, declare and initialize Arraylist in one line
+  }
+  
+}
+```
 
 
 
