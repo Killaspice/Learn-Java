@@ -184,6 +184,116 @@ public class Dog {
 
 
 
+<h2>If-Then-Else-If</h2>
+
+The conditional structure we’ve learned can be chained together to check as many conditions as are required by our program.
+
+Imagine our program is now selecting the appropriate course for a student. We’ll check their submission to find the correct course enrollment.
+
+The conditional statement now has multiple conditions that are evaluated from the top down:
+
+```
+String course = "Theatre";
+
+if (course.equals("Biology")) {
+
+  // Enroll in Biology course
+
+} else if (course.equals("Algebra")) {
+
+  // Enroll in Algebra course
+
+} else if (course.equals("Theatre")) {
+
+  // Enroll in Theatre course
+
+} else {
+
+  System.out.println("Course not found!");
+
+}
+
+The first condition to evaluate to true will have that code block run. Here’s an example demonstrating the order:
+
+int testScore = 72;
+
+if (testScore >= 90) {
+
+  System.out.println("A");
+
+} else if (testScore >= 80) {
+
+  System.out.println("B");
+
+} else if (testScore >= 70) {
+
+  System.out.println("C");
+
+} else if (testScore >= 60) {
+
+  System.out.println("D");
+
+} else {
+
+  System.out.println("F");
+
+}
+// prints: C
+```
+
+This chained conditional statement has two conditions that evaluate true. Because testScore >= 70 comes before testScore >= 60, only the earlier code block is run.
+
+Note: Only one of the code blocks will run.
+
+
+
+
+
+<h2>Nested Conditional Statements</h2>
+
+We can create more complex conditional structures by creating nested conditional statements, which is created by placing conditional statements inside other conditional statements:
+
+
+```
+if (outer condition) {
+  if (nested condition) {
+    Instruction to execute if both conditions are true
+  }
+}
+When we implement nested conditional statements, the outer statement is evaluated first. If the outer condition is true, then the inner, nested statement is evaluated.
+
+Let’s create a program that helps us decide what to wear based on the weather:
+
+int temp = 45;
+boolean raining = true;
+
+if (temp < 60) {
+  System.out.println("Wear a jacket!");
+  if (raining == true) {
+    System.out.println("Bring your umbrella.");
+  } else {
+    System.out.println("Leave your umbrella home.");
+  }
+}
+```
+
+
+In the code snippet above, our compiler will check the condition in the first if-then statement: temp < 60. Since temp has a value of 45, this condition is true; therefore, our program will print Wear a jacket!.
+
+Then, we’ll evaluate the condition of the nested if-then statement: raining == true. This condition is also true, so Bring your umbrella is also printed to the screen.
+
+Note that, if the first condition was false, the nested condition would not be evaluated.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
