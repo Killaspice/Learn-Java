@@ -1155,7 +1155,7 @@ class ToDos {
 <br>
 
 
-<h3>ArrayList Size</h3>
+<h3>ArrayList Size - add() method</h3>
 
 Let’s say we have an ArrayList that stores items in a user’s online shopping cart. As the user navigates through the site and adds items, their cart grows bigger and bigger.
 
@@ -1229,7 +1229,7 @@ class ToDos {
 <br>
 
 
-<h3>Accessing an Index</h3>
+<h3>Accessing an Index - get() method</h3>
 
 With arrays, we can use bracket notation to access a value at a particular index:
 
@@ -1261,7 +1261,31 @@ This code prints "Magnifying Glass", which is the value at index 2 of the ArrayL
 
 
 
+<h3>Changing a Value - set() method </h3>
 
+When we were using arrays, we could rewrite entries by using bracket notation to reassign values:
+
+```
+String[] shoppingCart = {"Trench Coat", "Tweed Houndstooth Hat", "Magnifying Glass"};
+
+shoppingCart[0] = "Tweed Cape";
+
+// shoppingCart now holds ["Tweed Cape", "Tweed Houndstooth Hat", "Magnifying Glass"]
+```
+
+ArrayList has a slightly different way of doing this, using the set() method:
+
+```
+ArrayList<String> shoppingCart = new ArrayList<String>();
+
+shoppingCart.add("Trench Coat");
+shoppingCart.add("Tweed Houndstooth Hat");
+shoppingCart.add("Magnifying Glass");
+
+shoppingCart.set(0, "Tweed Cape");
+
+// shoppingCart now holds ["Tweed Cape", "Tweed Houndstooth Hat", "Magnifying Glass"]
+```
 
 
 
