@@ -597,6 +597,102 @@ int[] my_ages = new int[5];
 
 Because a String is a reference to an Object, my_names will contain five nulls. my_ages will contain five 0s to begin with.
 
+1. We now want a Newsfeed to be able to keep track of a user’s top 10 articles.
+
+We’ve declared a String array called favoriteArticles, but we haven’t initialized it yet.
+
+In the constructor for Newsfeed, set favoriteArticles to be a new empty String array of size 10.
+
+
+2. Inside the method setFavoriteArticle(), set the value of the favoriteArticles array at index favoriteIndex to be the value of newArticle.
+
+For example, if I called setFavoriteArticle(2, "Celebrity Hands Throughout the Decades"), the value of favoriteArticles at index 2 would be set to "Celebrity Hands Throughout the Decades".
+
+```
+import java.util.Arrays;
+
+public class Newsfeed {
+  
+  String[] topics = {"Opinion", "Tech", "Science", "Health"};
+  int[] views = {0, 0, 0, 0};
+  String[] favoriteArticles;
+  
+  public Newsfeed(){
+    // Initialize favoriteArticles here:
+    favoriteArticles  = new String[10];
+  }
+  
+  public void setFavoriteArticle(int favoriteIndex, String newArticle){
+    // Add newArticle to favoriteArticles:
+    favoriteArticles[favoriteIndex] = newArticle;
+    
+  }
+    
+  public static void main(String[] args){
+    Newsfeed sampleFeed = new Newsfeed();
+    
+    sampleFeed.setFavoriteArticle(2, "Humans: Exterminate Or Not?");
+    sampleFeed.setFavoriteArticle(3, "Organic Eye Implants");
+    sampleFeed.setFavoriteArticle(0, "Oil News");
+    
+    System.out.println(Arrays.toString(sampleFeed.favoriteArticles));
+  }
+}
+
+```
+<br>
+<br>
+
+
+<h3>Length</h3>
+
+What if we have an array storing all the usernames for our program, and we want to quickly see how many users we have? To get the length of an array, we can access the length field of the array object:
+
+String[] menuItems = new String[5];
+System.out.println(menuItems.length);
+
+This command would print 5, since the menuItems array has 5 slots, even though they are all empty.
+
+If we print out the length of the prices array:
+
+double[] prices = {13.1, 15.87, 14.22, 16.66};
+
+System.out.println(prices.length);
+
+We would see 4, since there are four items in the prices array!
+
+In the method getNumTopics(), return the length of the topics array.
+
+```
+import java.util.Arrays;
+
+public class Newsfeed {
+  
+  String[] topics = {"Opinion", "Tech", "Science", "Health"};
+  int[] views = {0, 0, 0, 0};
+  
+  public Newsfeed(){
+
+  }
+    
+  public String[] getTopics(){
+    return topics;
+  }
+  
+  public int getNumTopics(){
+    return topics.length;
+    
+  }
+  
+  public static void main(String[] args){
+    Newsfeed sampleFeed = new Newsfeed();
+    
+    System.out.println("The number of topics is "+ sampleFeed.getNumTopics());
+   
+  }
+}
+```
+
 
 
 
