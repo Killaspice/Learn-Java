@@ -598,7 +598,7 @@ public class Newsfeed {
     Newsfeed sampleFeed = new Newsfeed();
     String[] topics = sampleFeed.getTopics();
     System.out.println(topics);
-    System.out.println(Arrays.toString(topics));
+    System.out.println(Arrays.toString(topics));  // Arrays.toString example
   }
 }
 
