@@ -184,7 +184,10 @@ public class Dog {
 
 
 
-<h2>If-Then-Else-If</h2>
+<h2>Conditions & Control flow</h2>
+
+
+<h3>If-Then-Else-If</h3>
 
 The conditional structure we’ve learned can be chained together to check as many conditions as are required by our program.
 
@@ -249,7 +252,7 @@ Note: Only one of the code blocks will run.
 
 
 
-<h2>Nested Conditional Statements</h2>
+<h3>Nested Conditional Statements</h3>
 
 We can create more complex conditional structures by creating nested conditional statements, which is created by placing conditional statements inside other conditional statements:
 
@@ -287,7 +290,7 @@ Note that, if the first condition was false, the nested condition would not be e
 
 
 
-<h2>Switch Statement</h2>
+<h3>Switch Statement</h3>
 
 An alternative to chaining if-then-else conditions together is to use the switch statement. This conditional will check a given value against any number of conditions and run the code block where there is a match.
 
@@ -399,7 +402,7 @@ In this lesson, we’ll explore each of these conditional operators to see how t
 
 
 
-<h2>Combining Conditional Operators</h2>
+<h3>Combining Conditional Operators</h3>
 
 We have the ability to expand our boolean expressions by using multiple conditional operators in a single expression.
 
@@ -433,7 +436,7 @@ true && true evaluates to true; therefore, the value of foo is true.
 
 
 
-<h2>Review</h2>
+<h3>Review</h3>
 
 Conditional operators work on boolean values to simplify our code. They’re often combined with conditional statements to consolidate the branching logic.
 
