@@ -399,5 +399,37 @@ In this lesson, we’ll explore each of these conditional operators to see how t
 
 
 
+<h2>Combining Conditional Operators</h2>
+
+We have the ability to expand our boolean expressions by using multiple conditional operators in a single expression.
+
+For example:
+
+boolean foo = true && !(false || !true)
+
+How does an expression like this get evaluated by the compiler? The order of evaluation when it comes to conditional operators is as follows:
+
+Conditions placed in parentheses - ()
+NOT - !
+AND - &&
+OR - ||
+Using this information, let’s dissect the expression above to find the value of foo:
+
+true && !(false || !true)
+
+First, we’ll evaluate (false || !true) because it is enclosed within parentheses. Following the order of evaluation, we will evaluate !true, which equals false:
+
+true && !(false || false)
+
+Then, we’ll evaluate (false || false) which equals false. Now our expression looks like this:
+
+true && !false
+
+Next, we’ll evaluate !false because it uses the NOT operator. This expression equals true making our expression the following:
+
+true && true
+
+true && true evaluates to true; therefore, the value of foo is true.
+
 
 </body>
