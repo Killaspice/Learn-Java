@@ -1491,7 +1491,143 @@ class Coffee {
 
 
 
+<h3>Iterating Over Arrays and ArrayLists</h3>
 
+
+One common pattern we’ll encounter as a programmer is traversing, or looping, through a list of data and doing something with each item. In Java, that list would be an array or ArrayList and the loop could be a for loop. But wait, how does this work?
+
+In order to traverse an array or ArrayList using a loop, we must find a way to access each element via its index. We may recall that for loops are created with a counter variable. We can use that counter to track the index of the current element as we iterate over the list of data.
+
+Because the first index in an array or ArrayList is 0, the counter would begin with a value of 0 and increment until the end of the list. So we can increment through the array or ArrayList using its indices.
+
+For example, if we wanted to add 1 to every int item in an array secretCode, we could do this:
+
+```
+for (int i = 0; i < secretCode.length; i++) {
+  // Increase value of element value by 1
+  secretCode[i] += 1;
+}
+```
+
+Notice that our condition in this example is i < secretCode.length. Because array indices start at 0, the length of secretCode is 1 larger than its final index. A loop should stop its traversal before its counter variable is equal to the length of the list.
+
+To give a concrete example, if the length of an array is 5, the last index we want to access is 4. If we were to try to access index 5, we would get an ArrayIndexOutOfBoundsException error! This is a very common mistake when first starting to traverse arrays.
+
+Traversing an ArrayList looks very similar:
+
+```
+for (int i = 0; i < secretCode.size(); i++) {
+  // Increase value of element value by 1
+  int num = secretCode.get(i);
+  secretCode.set(i, num + 1);
+}
+```
+
+We can also use while loops to traverse through arrays and ArrayLists. If we use a while loop, we need to create our own counter variable to access individual elements. We’ll also set our condition to continue looping until our counter variable equals the list length.
+
+For example, let’s use a while loop to traverse through an array:
+
+```
+int i = 0; // initialize counter
+
+while (i < secretCode.length) {
+  secretCode[i] += 1;
+  i++; // increment the while loop
+}
+```
+
+Traversing through an ArrayList with a while loop would look like this:
+
+```
+int i = 0; // initialize counter
+
+while (i < secretCode.size()) {
+  int num = secretCode.get(i);
+  secretCode.set(i, num + 1);
+  i++; // increment the while loop
+}
+```
+
+
+
+<h3>break and continue</h3>
+
+If we ever want to exit a loop before it finishes all its iterations or want to skip one of the iterations, we can use the break and continue keywords.
+
+The break keyword is used to exit, or break, a loop. Once break is executed, the loop will stop iterating. For example:
+
+```
+for (int i = 0; i < 10; i++) {
+  System.out.println(i);
+  if (i == 4) {
+    break;
+  }
+}
+```
+
+Even though the loop was set to iterate until the condition i < 10 is false, the above code will output the following because we used break:
+
+```
+0
+1
+2
+3
+4
+```
+
+The continue keyword can be placed inside of a loop if we want to skip an iteration. If continue is executed, the current loop iteration will immediately end, and the next iteration will begin. We can use the continue keyword to skip any even valued iteration:
+
+```
+int[] numbers = {1, 2, 3, 4, 5};
+    
+for (int i = 0; i < numbers.length; i++) {
+  if (numbers[i] % 2 == 0) {
+    continue;
+  }
+  System.out.println(numbers[i]);
+}
+```
+
+This program would output the following:
+
+```
+1
+3
+5
+```
+
+In this case, if a number is even, we hit a continue statement, which skips the rest of that iteration, so the print statement is skipped. As a result, we only see odd numbers print.
+
+Keep Reading: AP Computer Science A Students
+
+Loops can exist all throughout our code - including inside a method. If the return keyword was executed inside a loop contained in a method, then the loop iteration would be stopped and the method/constructor would be exited.
+
+For example, we have a method called checkForJacket() that takes in an array of Strings. If any of the elements are equivalent to the String value "jacket", the method will return true:
+
+```
+public static boolean checkForJacket(String[] lst) {
+  for (int i = 0; i < lst.length; i++) {
+    System.out.println(lst[i]);
+    if (lst[i] == "jacket") {
+      return true;
+    }
+  }
+  return false;
+} 
+
+public static void main(String[] args) {
+  String[] suitcase = {"shirt", "jacket", "pants", "socks"};   
+  System.out.println(checkForJacket(suitcase));
+}
+```
+
+As soon as an element equals "jacket", return true; is executed. This causes the loop to stop and the compiler to exit checkForJacket(). Running this code would output the following:
+
+```
+shirt
+jacket
+true
+```
 
 
 
