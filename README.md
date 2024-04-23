@@ -845,8 +845,8 @@ public class Newsfeed {
 
 
 
-String[] args
-8 min
+<h3>String[] args</h3>
+
 When we write main() methods for our programs, we use the parameter String[] args. Now that we know about array syntax, we can start to parse what this means.
 
 A String[] is an array made up of Strings. Examples of String arrays:
@@ -885,8 +885,8 @@ When we use args[0] in the main method, we can access that element like we did i
 
 
 Instructions
-
-1.We want to give the user an option to make a Newsfeed object for robots or for humans. We will take either "Robot" or "Human" as an argument to the main() method when the Newsfeed.java file is run.
+<br>
+1. We want to give the user an option to make a Newsfeed object for robots or for humans. We will take either "Robot" or "Human" as an argument to the main() method when the Newsfeed.java file is run.
 
 If the args array holds "Human", we will initialize the feed with human topics.
 If the args array holds "Robot", we will initialize the feed with robot topics.
@@ -987,14 +987,20 @@ But what if we needed to add to the book lists, newsfeeds, and other structures 
 
 To create mutable and dynamic lists, we can use Java’s ArrayList class. ArrayList allows us to:
 
-Store object references as elements
-Store elements of the same type (just like arrays)
-Access elements by index (just like arrays)
-Add elements
-Remove elements
+<ul>
+<li>Store object references as elements</li>
+<li>Store elements of the same type (just like arrays)</li>
+<li>Access elements by index (just like arrays)</li>
+<li>Add elements</li>
+<li>Remove elements</li>
+</ul>
+
+
 Remember how we had to import java.util.Arrays in order to use additional array methods? To use an ArrayList at all, we need to import them from Java’s util package as well:
 
+```
 import java.util.ArrayList;
+```
 
 Let’s learn how to make use of this powerful object…
 
