@@ -1808,7 +1808,8 @@ class MostExpensive {
       if (expense > mostExpensive){
         mostExpensive = expense;
       }
-      System.out.println("Checking expense item " + expense);
+      System.out.println("Checking expense item " + expense);  // you can't directly print out current index/which index is being checked in a for-each loop because it's abstracts away the index.
+ 	// To abstract (away), specifically in computer science, refers to intentionally obscuring the details of how something works in order to simplify things conceptually."
   
     }
     
