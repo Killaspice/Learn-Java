@@ -2117,6 +2117,28 @@ In the example above, "Mango" comes before "Peach", so we get a negative number 
 
 Note: Make sure to pay attention to capitalization when using ```.compareTo()```. Upper case and lower case letters have different Unicode values. For example, when comparing "Mango" and "Peach", we got -3, meaning that "Mango" was smaller. But if we compare "mango" and "Peach" we get 29. The Unicode value for lower case "m" is actually larger than upper case "P". Using .compareToIgnoreCase() will perform the same task, but will not consider upper/lower case.
 
+<br>
+<br>
+<br>
+
+
+<h3>charAt()</h3>
+
+The charAt() method returns the character located at a String‘s specified index.
+
+For example:
+
+String str = "qwer";
+
+System.out.println(str.charAt(2));
+
+It would output e because that’s what’s at index 2. (Once again, indices start with 0.)
+
+Suppose we try to return the character located at index 4. It would produce an IndexOutOfBoundsException error because index 4 is out of str‘s range:
+
+java.lang.StringIndexOutOfBoundsException: String index out of range: 4
+
+
 
 
 
