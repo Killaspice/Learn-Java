@@ -2124,24 +2124,61 @@ Note: Make sure to pay attention to capitalization when using ```.compareTo()```
 
 <h3>charAt()</h3>
 
-The charAt() method returns the character located at a String‘s specified index.
+The ```charAt()``` method returns the character located at a String‘s specified index.
 
 For example:
-
+```
 String str = "qwer";
 
 System.out.println(str.charAt(2));
-
+```
 It would output e because that’s what’s at index 2. (Once again, indices start with 0.)
 
 Suppose we try to return the character located at index 4. It would produce an IndexOutOfBoundsException error because index 4 is out of str‘s range:
 
+```
 java.lang.StringIndexOutOfBoundsException: String index out of range: 4
+```
 
 
+<br>
+<br>
+<br>
 
+<h3>substring()</h3>
 
+There may be times when we only want a part of a string. In such cases, we may want to extract a substring from a string.
 
+The ```substring()``` method does exactly that. For example:
+```
+String line = "The Heav'ns and all the Constellations rung";
+
+System.out.println(line.substring(24));
+```
+It would output Constellations rung because that’s what begins at index 24 and ends at the end of line. The substring begins with the character at the specified index and extends to the end of the string.
+
+Suppose we want a substring from the middle of the string. We can instead include two arguments in this method. For example:
+```
+String line = "The Heav'ns and all the Constellations rung";
+
+System.out.println(line.substring(27, 33));
+```
+
+When ```substring()``` is called with two arguments, the first argument is inclusive and the second is exclusive. This means the resulting substring will begin at index 27 and extend up to, but not including, index 33. Therefore, the example above would output stella because that’s the substring that begins at index 27 and ends at index 32, one index before 33.
+
+We can use this method to return a single-element substring at a specific index. We do this by calling substring() with the desired index value as the first argument and then the index value plus one as the second argument.
+
+For example, we can use this method to output just C:
+```
+String line = "The Heav'ns and all the Constellations rung";
+
+System.out.println(line.substring(24, 25));
+// Prints: C
+```
+
+<br>
+<br>
+<br>
 
 </body>
 
