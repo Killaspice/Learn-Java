@@ -1675,6 +1675,70 @@ jacket
 true
 ```
 
+<br>
+<br>
+
+Qn: Take a look at the for loop in the code editor. It starts its iteration at 0 and continues to iterate until i < 100 is false.
+
+Inside the loop, create a condition that checks if i is not divisible by 5. If the condition is true, skip the iteration. Outside the condition statement, print i. The final solution should not contain an else statement.
+
+The only numbers that should be printed are those that are divisible by 5!
+
+<br>
+Dude in forums felt the Qn too easy so he made 3 examples for break and continue.
+
+
+```
+import java.util.ArrayList;
+
+class Numbers {
+
+  // Method for 3rd exercise
+  public static boolean divisibleByThirteen(ArrayList<Integer> lst) {
+    for (int i = 0; i < lst.size(); i++) {
+      System.out.println(lst.get(i));
+      if (lst.get(i) % 13 == 0) {
+        return true;
+      }
+    }
+    return false;
+  } 
+
+  public static void main(String[] args) {
+
+    // 1st exercise - Continue
+    for (int i = 0; i < 100; i++) {
+      if (i % 5 != 0) {
+        continue;
+      }
+      System.out.println(i);
+    }
+
+    System.out.println("\n");
+
+    // 2nd exercise - Break
+    for (int i = 100; i > 0; i--) {
+      System.out.println(i);
+      if (i % 12 == 0) {
+        break;
+      }
+    }
+
+    System.out.println("\n");
+
+    // 3rd exercise - Return
+    ArrayList<Integer> numbers = new ArrayList<Integer>();
+    
+    for (int i = 100; i > 0; i--) {
+      numbers.add(i);
+    }
+
+    System.out.println(divisibleByThirteen(numbers));
+
+  }
+}   
+```
+
 
 
 
