@@ -2091,7 +2091,7 @@ System.out.println(flavor2.equals("Mango"));
 // prints false
 ```
 
-Side note, there’s also an equalsIgnoreCase() method that compares two strings without considering upper/lower cases.
+Side note, there’s also an ```equalsIgnoreCase()``` method that compares two strings without considering upper/lower cases.
 
 Keep Reading: AP Computer Science A Students
 
