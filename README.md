@@ -1039,7 +1039,7 @@ ArrayList<Integer> ages;
 ages = new ArrayList<Integer>();
 
 // Declaring and initializing in one line:
-ArrayList<String> babyNames = new ArrayList<String>();
+ArrayList<String> babyNames = new ArrayList<String>();     // empty ArrayList
 ```
 
 <br>
@@ -1070,11 +1070,11 @@ class ToDos {
 
 
 
-<h3>Adding an Item</h3>
+<h3>Adding an Item - add() method</h3>
 
 Now we have an empty ArrayList, but how do we get it to store values?
 
-ArrayList comes with an add() method which inserts an element into the structure. There are two ways we can use add().
+ArrayList comes with an ```add()``` method which inserts an element into the structure. There are two ways we can use add().
 
 If we want to add an element to the end of the ArrayList, we’ll call add() using only one argument that represents the value we are inserting. In this example, we’ll add objects from the Car class to an ArrayList called carShow:
 
@@ -1161,11 +1161,11 @@ class ToDos {
 <br>
 
 
-<h3>ArrayList Size - add() method</h3>
+<h3>ArrayList Size - size() method</h3>
 
 Let’s say we have an ArrayList that stores items in a user’s online shopping cart. As the user navigates through the site and adds items, their cart grows bigger and bigger.
 
-If we wanted to display the number of items in the cart, we could find the size of it using the size() method:
+If we wanted to display the number of items in the cart, we could find the size of it using the ```size()``` method:
 
 ```
 ArrayList<String> shoppingCart = new ArrayList<String>();
@@ -1233,6 +1233,7 @@ class ToDos {
 
 <br>
 <br>
+
 
 
 <h3>Accessing an Index - get() method</h3>
@@ -1537,6 +1538,8 @@ class Coffee {
 
 
 
+
+
 <h3>Iterating Over Arrays and ArrayLists</h3>
 
 
@@ -1558,6 +1561,7 @@ for (int i = 0; i < secretCode.length; i++) {
 Notice that our condition in this example is i < secretCode.length. Because array indices start at 0, the length of secretCode is 1 larger than its final index. A loop should stop its traversal before its counter variable is equal to the length of the list.
 
 To give a concrete example, if the length of an array is 5, the last index we want to access is 4. If we were to try to access index 5, we would get an ArrayIndexOutOfBoundsException error! This is a very common mistake when first starting to traverse arrays.
+
 
 Traversing an ArrayList looks very similar:
 
@@ -1593,6 +1597,8 @@ while (i < secretCode.size()) {
   i++; // increment the while loop
 }
 ```
+
+
 
 
 
@@ -1738,6 +1744,10 @@ class Numbers {
   }
 }   
 ```
+
+
+
+
 
 <h3>For-Each Loops</h3>
 
