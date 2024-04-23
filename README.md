@@ -2095,7 +2095,7 @@ Side note, there’s also an ```equalsIgnoreCase()``` method that compares two s
 
 Keep Reading: AP Computer Science A Students
 
-We can also compare String values lexicographically (think dictionary order) using the .compareTo() method. When we call the .compareTo() method, each character in the String is converted to Unicode; then the Unicode character from each String is compared.
+We can also compare String values lexicographically (think dictionary order) using the ```.compareTo()``` method. When we call the ```.compareTo()``` method, each character in the String is converted to Unicode; then the Unicode character from each String is compared.
 
 The method will return an int that represents the difference between the two Strings.
 
