@@ -2231,13 +2231,15 @@ Congratulations! 🙌
 
 We have learned some of the string methods that come with the String class:
 
-length()
-concat()
-indexOf()
-charAt()
-equals() / equalsIgnoreCase()
-substring()
-toUpperCase() / toLowerCase()
+<ul>
+	<li>length()</li>
+	<li>concat()</li>
+	<li>indexOf()</li>
+	<li>charAt()</li>
+	<li>equals() / equalsIgnoreCase()</li>
+	<li>substring()</li>
+	<li>toUpperCase() / toLowerCase()</li>
+</ul>
 
 
 <br>
@@ -2246,8 +2248,31 @@ toUpperCase() / toLowerCase()
 
 
 
+<h2>ACCESS, ENCAPSULATION, AND SCOPE</h2>
+
+<h3>What are Access and Scope?</h3>
+
+As our Java programs begin to get bigger and we begin to have multiple Objects and Classes that interact with each other, the concepts of access and scope come into play. To oversimplify things, the concepts of access and scope both center around what parts of your programs can interact with specific variables or methods from other parts of your program. Let’s take a brief look at some of the concepts we’ll cover:
+
+Access
+<ul>
+<li>The public and private keywords and how they relate to Classes, variables, constructors, and methods</li>
+<li>The concept of encapsulation</li>
+<li>Accessor methods, sometimes known as “getters”</li>
+<li>Mutator methods, sometimes known as “setters”</li>
+</ul>
 
 
+Scope
+<ul>
+<li>Local variables vs. instance variables</li>
+<li>The this keyword</li>
+<li>Let’s get started!</li>
+</ul>
+
+<br>
+<br>
+<br>
 
 
 
