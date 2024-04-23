@@ -1774,7 +1774,7 @@ We can read the : as “in” like this: for each inventoryItem (which should be
 
 If we try to assign a new value to the enhanced for loop variable, the value stored in the array or ArrayList will not change. This is because, for every iteration in the enhanced loop, the loop variable is assigned a copy of the list element.
 
-Note: We can name the enhanced for loop variable whatever we want; using the singular of a plural is just a convention. We may also encounter conventions like String word : sentence.
+Note: We can name the enhanced for loop variable whatever we want; using the singular of a plural is just a convention. We may also encounter conventions like ```String word : sentence```.
 
 
 1. Let’s use a for-each loop to find the priciest item in expenses.
