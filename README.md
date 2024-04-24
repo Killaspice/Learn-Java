@@ -3048,6 +3048,98 @@ public class ATM{
 }
 ```
 
+<br>
+<br>
+<br>
+
+
+<h3>Writing Your Own Static Methods</h3>
+
+Nice work! Now that we’ve seen how static variables work, let’s look into how to write our own static methods.
+
+Let’s get the syntax out of the way first — just like with variables, to create a static method, use the static keyword in the method’s definition. Just like with variables, this keyword usually comes after public or private.
+
+```
+public static void myFirstStaticMethod(){
+  // Some code here
+}
+```
+Often times, you’ll see static methods that are accessors or mutators for static variables.
+```
+public static int getMyStaticVariable(){
+  return myStaticVariable;
+}
+
+public static void setMyStaticVariable(int newValue){
+  myStaticVariable = newValue;
+}
+```
+
+One important rule to note is that static methods can’t interact with non-static instance variables.
+
+To wrap your mind around this, consider why we use this when working with non-static instance variables. Let’s say we have a Dog class with a non-static instance variable named age. If we have a line of code like this.age = 5;, that means we’re setting the age of a specific Dog equal to 5. However, if age were static, that would mean that the variable belongs to the entire class, not a specific object.
+
+
+<strong>The ```this``` keyword can’t be used by a static method since static methods are associated with an entire class, not a specific object of that class. If you try to mix this with a static method, you’ll see the error message non-static variable this cannot be referenced from a static context. ***</strong>
+
+
+```
+public class ATM{
+  // Static variables
+  public static int totalMoney = 0;
+  public static int numATMs = 0;
+
+  // Instance variables
+  public int money;
+
+  public ATM(int inputMoney){
+    this.money = inputMoney;
+    numATMs += 1;
+    totalMoney += inputMoney;
+  }
+
+  public void withdrawMoney(int amountToWithdraw){
+    if(amountToWithdraw <= this.money){
+      this.money -= amountToWithdraw;
+      totalMoney -= amountToWithdraw;
+    }
+  }
+
+  // Write your averageMoney() method here
+  public static void averageMoney(){
+    System.out.println(totalMoney / numATMs);
+    System.out.println(this.money); // produces error to show there's single object for reference, as static method belongs and refers to whole class. Computer tells you this. is for single object reference, and it don't make sense for static context'
+  }
+
+  public static void main(String[] args){
+
+    System.out.println("Total number of ATMs: " + ATM.numATMs); 
+    ATM firstATM = new ATM(1000);
+    ATM secondATM = new ATM(500);
+    System.out.println("Total number of ATMs: " + ATM.numATMs); 
+
+    System.out.println("Total amount of money in all ATMs: " + ATM.totalMoney);  
+    firstATM.withdrawMoney(500);
+    secondATM.withdrawMoney(200);
+    System.out.println("Total amount of money in all ATMs: " + ATM.totalMoney);    
+
+    // Call averageMoney() here
+    ATM.averageMoney();
+  }
+
+}
+```
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 
