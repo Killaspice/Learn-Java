@@ -3131,13 +3131,74 @@ public class ATM{
 ```
 
 
+<h3>Review</h3>
+
+Great work! You now have an understanding of what the static keyword does. In fact, if you’ve made it this far in your Java lessons, you probably have a pretty good sense of what all the keywords and jargon are doing in public static void main(String[] args). Take a moment to celebrate — that line of code can be incredibly intimidating for new learners and it’s a real accomplishment to learn about all of those different pieces.
+
+To review, here are some of the main takeaways about static methods and variables:
+
+<ul>
+<li>Static methods and variables are associated with the class as a whole, not objects of the class.</li>
+<li>Static methods and variables are declared as static by using the static keyword upon declaration.</li>
+<li>Static methods cannot interact with non-static instance variables. This is due to static methods not having a this reference.</li>
+<li>Both static methods and non-static methods can interact with static variables.</li>
+</ul>
 
 
+```
+public class ATM{
+  // Static variables
+  public static int totalMoney = 0;
+  public static int numATMs = 0;
 
+  // Instance variables
+  public int money;
 
+  public ATM(int inputMoney){
+    this.money = inputMoney;
+    numATMs += 1;
+    totalMoney += inputMoney;
+  }
 
+  public void withdrawMoney(int amountToWithdraw){
+    if(amountToWithdraw <= this.money){
+      this.money -= amountToWithdraw;
+      totalMoney -= amountToWithdraw;
+    }
+  }
 
+  public void depositMoney(int amountToDeposit){
+      this.money += amountToDeposit;
+      totalMoney += amountToDeposit;
+    
+  }
 
+  public static void averageMoney(){
+    System.out.println(totalMoney / numATMs);
+  }
+
+  public static void main(String[] args){
+
+    System.out.println("Total number of ATMs: " + ATM.numATMs); 
+    ATM firstATM = new ATM(1000);
+    ATM secondATM = new ATM(500);
+    System.out.println("Total number of ATMs: " + ATM.numATMs); 
+
+    System.out.println("Total amount of money in all ATMs: " + ATM.totalMoney);  
+    firstATM.withdrawMoney(500);
+    secondATM.withdrawMoney(200);
+    System.out.println("Total amount of money in all ATMs: " + ATM.totalMoney);    
+
+    firstATM.depositMoney(5000);
+    System.out.println("Total amount of money in all ATMs: " + ATM.totalMoney); 
+    System.out.println("Total amount of money in all first ATM: " + firstATM.money); 
+
+    // Call averageMoney() here
+    ATM.averageMoney();
+  }
+
+}
+```
 
 
 </body>
