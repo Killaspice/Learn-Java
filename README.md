@@ -2641,9 +2641,9 @@ public class Person{
 
 Now that we’ve seen how methods can call other methods using this., let’s look at a situation where you might want to use private methods. Oftentimes, private methods are helper methods — that is to say that they’re methods that other, bigger methods use.
 
-For example, for our CheckingAccount example, we might want a public method like getAccountInformation() that prints information like the name of the account owner, the amount of money in the account, and the amount of interest the account will make in a month. That way, another class, like a Bank, could call that public method to get all of that information quickly.
+For example, for our CheckingAccount example, we might want a public method like ```getAccountInformation()``` that prints information like the name of the account owner, the amount of money in the account, and the amount of interest the account will make in a month. That way, another class, like a Bank, could call that public method to get all of that information quickly.
 
-Well, in order to get that information, we might want to break that larger method into several helper methods. For example, inside getAccountInformation(), we might want to call a function called calculateNextMonthInterest(). That helper method should probably be private. There’s no need for a Bank to call these smaller helper methods — instead, a Bank can call the one public method, and rely on that method to do all of the complicated work by calling smaller private methods.
+Well, in order to get that information, we might want to break that larger method into several helper methods. For example, inside ```getAccountInformation()```, we might want to call a function called calculateNextMonthInterest(). That helper method should probably be private. There’s no need for a Bank to call these smaller helper methods — instead, a Bank can call the one public method, and rely on that method to do all of the complicated work by calling smaller private methods.
 
 
 Qn: Let’s implement what we described in the narrative. We’ve written our ```getAccountInformation()``` method in the CheckingAccount.java class. But we haven’t yet implemented the ```calculateNextMonthInterest()``` method. This should be a private method and return a double — the balance of the account multiplied by the interestRate. Write that function.
@@ -2722,19 +2722,332 @@ Nice work! In this lesson, we dove into some of the more subtle features of clas
 <li>The this keyword can be used to call methods when writing classes.</li>
 </ul>
 
+<br>
+<br>
+<br>
+
+<h3>The Math Class</h3>
+
+Math can play a major role in our programs. It can become tedious to write out every equation we need in our code. Luckily, a lot of this work can be truncated using the Math class. The Java Math class is part of the java.lang package; it contains a variety of methods that can be used to perform numerical calculations in our programs. In this article, we’ll discuss the different types of Math methods available to us and how to implement them in our Java programs.
+
+The Math class also offers a good opportunity for us to learn about Static methods. We’ll take a look at what static methods are and how they’re different from non-static methods.
+
+<br>
+<br>
+
+<h3>Calling Static Methods</h3>
+
+Every method in the Math class is static. This means that we can call and use these methods without creating an object of the class. There are two main options for calling a static method.
+// Static methods are methods that belong to an entire class, not a specific object of the class.
+
+<br>
+
+Our first option is to append the dot operator to the class name followed by the method we want to execute. If we wanted to reference a method of the Math class, we would use Math.NameOfMethodHere. Let’s see this in action with the Math class method min() which returns the smaller value of two given numbers:
+```
+class Numbers {
+  public static void main(String[] args) {
+    // Call method using the Class name, the dot operator, the method name, and arguments
+    int smallerNumber = Math.min(3, 10);
+    System.out.println(smallerNumber); // Prints: 3
+  }
+}
+```
+How is this any different from calling a non-static method? We don’t need to create an object of the class in order to use the methods it contains. Let’s see an example of a non-static method:
+```
+class Numbers {
+  int firstNumber;
+  int secondNumber;
+
+  public Numbers (int num1, int num2) {
+    firstNumber = num1;
+    secondNumber = num2;
+  }
+  
+  // non-static method
+  public int returnSum() {
+    return firstNumber + secondNumber;
+  }
+  
+  public static void main(String[] args) {
+    // Create an object
+    Numbers myNumbers = new Numbers(2, 5);
+    // Call a non-static method on object
+    int sum = myNumbers.returnSum();
+    System.out.println(sum); // Prints: 7
+  }
+}
+```
+
+In our code above, we had to create an object of type Numbers in order to use the non-static method returnSum(). With non-static methods, if we don’t create an object of this class (or one of its subclasses), we do not have access to its methods. This isn’t the case for static methods.
+
+Our second option for calling a static method from the Math class is to import the class by adding import static java.lang.Math.*; to the top of our program. If we import the Math class, we can reference the method using only the method name like so:
+
+```
+import static java.lang.Math.*; // import Math class
+
+class Numbers {
+  public static void main(String[] args) {
+    // Call method by using method name and arguments
+    int smallerNumber = min(3, 10);
+    System.out.println(smallerNumber); // Prints: 3
+  }
+}
+```
+
+<h4>Useful Methods</h4>
+
+There are many useful methods from the Math class that can be implemented in our programs. For those of us taking the AP Computer Science A exam, the following methods and their descriptions will be available in the Java Quick Reference Guide:
+
+<h4>int abs(int x)</h4>
+Purpose: Returns the absolute value of an int value
+
+The absolute value states how many numbers a value is away from 0. The absolute value is always a positive number. For example, the absolute value of -5 is 5 because it is 5 away from 0. In Java, we can get the absolute value of a number like this:
+```
+System.out.println(Math.abs(5)); // Prints: 5
+System.out.println(Math.abs(-5)); // Prints: 5
+```
+<h4>double abs(double x)</h4>
+Purpose: Returns the absolute value of a double value
+
+This is similar to the previous method, but this method takes in and returns a double type value:
+```
+System.out.println(Math.abs(5.0)); // Prints: 5.0
+System.out.println(Math.abs(-5.0)); // Prints: 5.0
+```
+
+<h4>double pow(double base, double exponent)</h4>
+Purpose: Returns the value of the first parameter raised to the power of the second parameter.
+
+The power, or exponent, describes how many times a number should be multiplied by itself. For example, 5 to the power of 3 is equivalent to 5 * 5 * 5, or 125. If we wanted to see this in Java, we could use Math.pow() like this:
+```
+double x = Math.pow(5, 3);
+System.out.println(x); // Prints: 125.0
+```
+
+
+<h4>double sqrt(double x)</h4>
+Purpose: Returns the positive square root of a double value
+
+The square root of a number represents what value can be multiplied by itself in order to equal a specified value. For example, the square root of 49 is 7 because 7 * 7 is 49. In java, getting the square root of a value looks like this:
+
+```
+double x = Math.sqrt(49); 
+System.out.println(x); // Prints: 7.0
+double y = Math.sqrt(52); 
+System.out.println(y); // Prints: 7.211102550927978
+```
 
 
 
+<h4>double random()</h4>
+
+Purpose: Returns a double value greater than or equal to 0.0 and less than 1.0
+
+Randomization is a great way to add probability to our programs. There are many ways to implement Math.random() in Java. Its default use case is to produce a random double value between 0.0 and 1.0. For example:
+```
+System.out.println(Math.random());
+System.out.println(Math.random());
+System.out.println(Math.random());
+```
+
+The random values can change every time we run our program. An example output of the above program is the following:
+
+```
+0.8592007008856128
+0.6120058754881421
+0.48259656765819403
+```
+
+With some manipulation, we can use Math.random() to create a random int or double value within a predefined range.
+
+For example, if we wanted a random double value between 0 and 10, not including 10, we would multiply Math.random() by 10
+
+```
+// Random double value between 0 and 10, not including 10
+double a = Math.random() * 10;
+
+If we wanted a random int value between 0 and 9, we would need to implement the (int) casting operator in our expression like so:
+
+// Random int value between 0 and 9
+int b = (int)(Math.random() * 10);
+
+If we wanted our range to start at 1 and end at 10, we would have to add 1 to the end of our previous expression:
+
+// Random int value between 1 and 10
+int c = (int)(Math.random() * 10) + 1;
+```
+
+Using addition also gives us the ability to start the range at any number. What if we wanted an int value in the range of 10 up to and including 20? We would have to implement the algorithm (Math.random() * (maxValue - minValue + 1)) + minValue.
+
+For example:
+```
+// Random int value between 10 and 20
+int d = (int)(Math.random() * 11 ) + 10;
+```
+
+We multiply Math.random() by 11 because 20 (our max value) minus 10 (our minimum value) plus 1 is 11. We add + 10 outside the parentheses so that our smallest value is guaranteed to be 10.
+
+Here’s another way to think about this algorithm — the value that you multiply by defines the number of possible values you can get. The number that you add defines the starting value. So, for example, (int)(Math.random() * 3 ) + 5; will give you one of three random values starting at 5. So this could give you 5, 6, or 7.
+
+Finally, be careful of off-by-one errors when using Math.random(). For example, you might write some code that you think generates a number between 1 and 10, but it actually generates a number between 1 and 9. Be sure to test your code frequently to spot logical errors like these!
+
+
+<br>
+<br>
+<br>
+
+
+
+<h3>Static Methods Refresher</h3>
+
+
+In this lesson, we’re going to dive into how to create classes with your own static methods and static variables. To begin, let’s take a quick refresher on static methods.
+
+Static methods are methods that belong to an entire class, not a specific object of the class. Static methods are called using the class name and the . operator. We’ve seen a couple of static methods already!
+```
+double randomNumber = Math.random();
+// Stores a random decimal between 0.0 and 1.0 in randomNumber
+
+double number = Double.valueOf("2.5");
+// Transforms the String "2.5" into a double
+```
+
+
+In the first example, ```random()``` is a static method that belongs to the Math class. We didn’t need to create a Math object (like Math myMathObject = new Math()) in order to use that method. We could just call it using the class name.
+
+Similarly, valueOf() is a static method of the Double class. Given a String as an input, this method will turn that String into a double. Again, we don’t need to create a Double object in order to call this method — we use the class itself to call it.
+
+Finally, notice that our main() methods have been static this whole time. When Java runs your program, it calls that the main method of your class — YourClassName.main().
+
+
+
+```
+public class ExerciseOne{
+  public static void main(String[] args){
+
+    int randomNum = (int)(Math.random() * 10) + 1;
+    System.out.println("Your random number between one and ten is " + randomNum);
+    
+    int negativeNum = -2;
+    int absNum = Math.abs(negativeNum);
+    System.out.println("The absolute value of "+ negativeNum + " is " + absNum);
+
+    String myNewString = Integer.toString(1);
+    System.out.println(myNewString);
+
+  }
+}
+```
+
+<br>
+<br>
+
+<h3>Static Variables</h3>
+// Static Variables belong to the class itself, instead of an object of the class. Like fixed variable eg. animal species
+
+
+We’ll begin writing our own static methods soon, but before we do, let’s take a look at static variables. Much like static methods, you can think of static variables as belonging to the class itself instead of belonging to a particular object of the class.
+
+Just like with static methods, we can access static variables by using the name of the class and the . operator. Finally, we declare static variables by using the static keyword during declaration. This keyword usually comes after the variable’s access modifier (public or private).
+
+When we put this all together, we might end up with a class that looks something like this:
+```
+public class Dog{
+
+  // Static variables
+  public static String genus = "Canis";
+
+  //Instance variables
+  public int age;
+  public String name;
+
+  public Dog(int inputAge, String inputName){
+    this.age = inputAge;
+    this.name = inputName;
+  }
+}
+```
+Since all dogs share the same genus, we could use a static variable to store that information for the entire class. However, we want each dog to have its own unique name and age, so those aren’t static. We could now access this static variable in a main() function like so:
+```
+public class Dog{
+  //Variables, constructors and methods defined here
+
+  public static void main(String[] args){
+    System.out.println(Dog.genus); // Prints Canis
+  }
+}
+```
+
+Unlike static methods, you can still access static variables from a specific object of the class. However, no matter what object you use to access the variable, the value will always be the same. You can think of it as all objects of the class sharing the same variable
+```
+public static void main(String[] args){
+  Dog snoopy = new Dog(3, "Snoopy");
+  Dog ringo = new Dog(5, "Ringo");
+
+  System.out.println(Dog.genus); // Prints Canis
+  System.out.println(snoopy.genus); // Prints Canis
+  System.out.println(ringo.genus); // Prints Canis
+}
+```
+
+Finally, you might have seen a few static variables before. If you want easy access to the largest possible integer, you can get it by using Integer.MAX_VALUE. If you look at the official documentation you’ll see that this variable is public, static, and ```final```. 
+
+(final means that you can’t change the variable’s value after creating it.) We’re starting to know a lot of Java keywords!
+
+<br>
+<br>
+
+<h3>Modifying Static Variables</h3>
+
+Now that we’ve created a couple of static variables, let’s start to edit them. The good news is that editing static variables is similar to editing any other variable. Whether you’re writing code in a constructor, a non-static method, or a static method, you have access to static variables.
+
+Before we jump into the checkpoints, let’s think about times when you might want to edit static variables. Often times, you’ll see static variables used to keep track of information about all objects of a class. For example, our variable numATMs is keeping track of the total number of ATMs in the system. Therefore, every time an ATM is created (using the constructor), we should increase that variable by 1. If we could somehow destroy an ATM, the method that destroys it should decrease numATMs static variable by 1.
+
+Similarly, we have a variable named totalMoney. This variable is keeping track of all money across all ATMs. Whenever we remove money from an ATM using the non-static withdrawMoney() method, we should modify the money instance variable for that particular ATM as well as the totalMoney variable. In doing so, all ATMs will know how much money is in the system.
+
+
+```
+public class ATM{
+  // Static variables
+  public static int totalMoney = 0;
+  public static int numATMs = 0;
+
+  // Instance variables
+  public int money;
+
+  public ATM(int inputMoney){
+    this.money = inputMoney;
+
+    // Steps 1 and 2: Edit numATMs and total money here
+    numATMs += 1;
+    totalMoney += inputMoney;
+  }
+
+  public void withdrawMoney(int amountToWithdraw){
+    if(amountToWithdraw <= this.money){
+      this.money -= amountToWithdraw;
+
+      // Step 3: Edit totalMoney here
+      totalMoney -= amountToWithdraw;
+    }
+  }
+
+  public static void main(String[] args){
+
+    System.out.println("Total number of ATMs: " + ATM.numATMs); 
+    ATM firstATM = new ATM(1000);
+    ATM secondATM = new ATM(500);
+    System.out.println("Total number of ATMs: " + ATM.numATMs); 
+
+    System.out.println("Total amount of money in all ATMs: " + ATM.totalMoney);  
+    firstATM.withdrawMoney(500);
+    secondATM.withdrawMoney(200);
+    System.out.println("Total amount of money in all ATMs: " + ATM.totalMoney);
+
+  }
+}
+```
 
 </body>
-
-
-
-
-
-
-
-
-
 
 
