@@ -3469,7 +3469,9 @@ Your checking account balance is $5000
 Your account balance is $5000
 ```
 
-
+<br>
+<br>
+<br>
 
 <h3>Child Classes in Arrays and ArrayLists</h3>
 
@@ -3498,9 +3500,11 @@ for (Monster monster : monsters) {
 
 In the code above, we were able to call ```attack()``` on each monster in monsters despite the fact that, in the ```for-each``` loop, monster is declared as the parent class type ```Monster```.
 
+<br>
+<br>
+<br>
 
-
-
+<a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops", Link to For Each Loop>
 
 
 
