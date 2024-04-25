@@ -1598,8 +1598,10 @@ while (i < secretCode.size()) {
 }
 ```
 
-
-
+<br>
+<br>
+<br>
+<br>
 
 
 <h3>break and continue</h3>
@@ -1691,7 +1693,7 @@ Inside the loop, create a condition that checks if i is not divisible by 5. If t
 The only numbers that should be printed are those that are divisible by 5!
 
 <br>
-Dude in forums felt the Qn too easy so he made 3 examples for break and continue.
+<bold>Dude in forums felt the Qn too easy so he made 3 examples for break and continue.</bold>
 
 
 ```
