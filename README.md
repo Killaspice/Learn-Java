@@ -3200,6 +3200,119 @@ public class ATM{
 }
 ```
 
+<br>
+<br>
+<br>
+
+
+<h2>INHERITANCE AND POLYMORPHISM</h2>
+
+<h3>Introducing Inheritance</h3>
+
+Our Triangle class will inherit all the traits of Shape, but Triangle can also contain its own unique methods and variables. For example, we could have an instance variable called hypotenuse and a method called findHypotenuse() that can only be accessed by Triangle class references. Objects of Triangle can call any method contained in Triangle or Shape. This gives us a bunch of possibilities!
+
+There are several terms you’ll encounter frequently:
+
+<li>Parent class, superclass, and base class refer to the class that another class inherits from (like Shape).</li>
+<li>Child class, subclass, and derived class refer to a class that inherits from another class (like Triangle).</li>
+
+<img src = "https://content.codecademy.com/courses/learn-java/revised-2019/inheritance.gif">
+
+
+<br>
+<br>
+<br>
+
+<h3>Inheritance in Practice</h3>
+
+So how do we define a child class so that it inherits from a parent class? We use the keyword extends like this:
+
+```
+class Shape {
+
+  // Shape class members
+
+}
+
+class Triangle extends Shape {
+
+  // additional Triangle class members
+
+}
+```
+
+Now Triangle has inherited traits from Shape, meaning it copied over class members from Shape. When we use inheritance to extend a subclass from a superclass, we create an “is-a” relationship from the subclass to the superclass. For example, an object of Triangle is a member of the Shape class; however, an object of Shape is not necessarily an object of Triangle.
+
+Until now, we’ve only been working with one class and one file. However, most Java programs utilize multiple classes, each of which requires its own file. Only one file needs a ```main() method``` — this is the file we will run.
+
+Note: the various classes in our Java package — even though they are in different files — will have access to each other, so we can instantiate one class inside of another.
+
+
+<br>
+<br>
+
+
+<h3>Inheriting the Constructor</h3>
+
+Hang on, you might be thinking, if the child class inherits its parent’s fields and methods, does it also inherit the constructor? Let’s take a look at how the super() constructor works!
+
+Let’s say Shape has a numSides field that is set by passing an integer into the constructor. If we’re instantiating a Triangle, we would want that number to always be 3, so we’d want to modify the constructor to automatically assign numSides with a value of 3.
+
+Can we do that?
+
+As it happens, Java has a trick up its sleeve for just this occasion: using the super() method which acts like the parent constructor inside the child class constructor:
+
+```
+class Triangle extends Shape {
+
+  Triangle() {
+    super(3);
+  }
+
+  // additional Triangle class members
+
+}
+```
+By passing 3 to super(), we are making it possible to instantiate a Triangle without passing in a value for numSides.
+
+Meanwhile, super(3) (behaving as Shape(3)) will shoulder the responsibility of setting numSides to 3 for our Triangle object. It’s like we called Shape(3).
+
+It is also possible to write a constructor without making a call to any ```super()``` constructor:
+
+```
+class Triangle extends Shape {
+
+  Triangle() {
+    this.numSides = 3;
+  }
+
+  // additional Triangle class methods
+
+}
+```
+
+In this situation, Java secretly calls the parent class’ no-argument constructor (super()). So in this specific example, the Triangle() constructor first calls the Shape() constructor. That Shape() takes care of whatever business it needs to take care of. And then after that is complete, we go in and set this.numSides to 3.
+
+If you’re writing a constructor of a child class, and don’t explicitly make a call to a constructor from a parent class using super, it’s important to remember that Java will automatically (and secretly) call super() as the first line of your child class constructor.
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
