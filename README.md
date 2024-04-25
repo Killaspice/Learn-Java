@@ -1693,7 +1693,7 @@ Inside the loop, create a condition that checks if i is not divisible by 5. If t
 The only numbers that should be printed are those that are divisible by 5!
 
 <br>
-<bold>Dude in forums felt the Qn too easy so he made 3 examples for break and continue.</bold>
+<strong>Dude in forums felt the Qn too easy so he made 3 examples for break and continue.</strong>
 
 
 ```
@@ -3677,7 +3677,7 @@ Some common run-time errors:
 
 In the last exercise when we were dealing with run-time errors, you might’ve noticed a new word in the error message: “Exception”.
 
-Java uses exceptions to handle errors and other exceptional events. <bold>Exceptions are the conditions that occur at runtime and may cause the termination of the program.</bold>
+Java uses exceptions to handle errors and other exceptional events. <strong>Exceptions are the conditions that occur at runtime and may cause the termination of the program.</strong>
 
 When an exception occurs, Java displays a message that includes the name of the exception, the line of the program where the exception occurred, and a stack trace. The stack trace includes:
 
