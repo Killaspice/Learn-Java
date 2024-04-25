@@ -3504,7 +3504,7 @@ In the code above, we were able to call ```attack()``` on each monster in monste
 <br>
 <br>
 
-<a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops", Link to For Each Loop>
+<a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops">Link to For Each Loop</a>
 
 
 
