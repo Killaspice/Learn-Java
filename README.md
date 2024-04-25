@@ -3291,9 +3291,9 @@ class Triangle extends Shape {
 }
 ```
 
-In this situation, Java secretly calls the parent class’ no-argument constructor (super()). So in this specific example, the Triangle() constructor first calls the Shape() constructor. That Shape() takes care of whatever business it needs to take care of. And then after that is complete, we go in and set this.numSides to 3.
+In this situation, Java secretly calls the parent class’ no-argument constructor ```(super())```. So in this specific example, the ```Triangle()``` constructor first calls the ```Shape()``` constructor. That Shape() takes care of whatever business it needs to take care of. And then after that is complete, we go in and set this.numSides to 3.
 
-If you’re writing a constructor of a child class, and don’t explicitly make a call to a constructor from a parent class using super, it’s important to remember that Java will automatically (and secretly) call super() as the first line of your child class constructor.
+If you’re writing a constructor of a child class, and don’t explicitly make a call to a constructor from a parent class using super, it’s important to remember that Java will automatically (and secretly) call ```super()``` as the first line of your child class constructor.
 
 
 
@@ -3331,9 +3331,9 @@ class Shape {
 // any child class of Shape can access perimeter
 ```
 
-In addition to access modifiers, there’s another way to establish how child classes can interact with inherited parent class members: using the final keyword. If we add final after a parent class method’s access modifier, we disallow any child classes from changing that method. This is helpful in limiting bugs that might occur from modifying a particular method.
+In addition to access modifiers, there’s another way to establish how child classes can interact with inherited parent class members: using the ```final``` keyword. If we add ```final``` after a parent class method’s access modifier, we disallow any child classes from changing that method. This is helpful in limiting bugs that might occur from modifying a particular method.
 
-Though it is not required, there is an established order when two or more field modifiers are used (eg. public final). To learn more about this read the documentation.
+Though it is not required, there is an established order when two or more field modifiers are used (eg. ```public final```). To learn more about this read the documentation.
 
 
 
@@ -3382,7 +3382,7 @@ The main advantages of polymorphic programming:
 <li>These benefits are particularly helpful when we want to develop our own Java packages for other developers to import and use.</li>
 </ul>
 
-For example, the built-in operator + can be used for both doubles and ints. To the computer, the + means something like addDouble() for one and addInt() for the other, but the creators of Java (and of other languages) didn’t want to burden us as developers with recalling each individual method.
+For example, the built-in operator ```+``` can be used for both doubles and ints. To the computer, the + means something like addDouble() for one and addInt() for the other, but the creators of Java (and of other languages) didn’t want to burden us as developers with recalling each individual method.
 
 Note that the reverse situation is not true; you cannot use a generic parent class instance where a child class instance is required. So an Orange can be used as a Fruit, but a Fruit cannot be used as an Orange.
 
