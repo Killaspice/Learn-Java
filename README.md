@@ -3296,6 +3296,9 @@ In this situation, Java secretly calls the parent class’ no-argument construct
 If you’re writing a constructor of a child class, and don’t explicitly make a call to a constructor from a parent class using super, it’s important to remember that Java will automatically (and secretly) call super() as the first line of your child class constructor.
 
 
+
+
+
 <br>
 <br>
 
@@ -3305,12 +3308,54 @@ If you’re writing a constructor of a child class, and don’t explicitly make 
 
 
 
+<h3>Parent Class Aspect Modifiers</h3>
+
+You may recall that Java class members use private and public access modifiers to determine whether they can be accessed from outside the class. So does a child class inherit its parent’s private members?
+
+Well, no. But there is another access modifier we can use to keep a parent class member accessible to its child classes and to files in the package it’s contained in — and otherwise private: protected.
+
+
+<img src = "https://content.codecademy.com/courses/learn-java/revised-2019/access-modifiers-chart.png">
+
+
+Here’s what ```protected``` looks like in use:
+
+
+```
+class Shape {
+
+  protected double perimeter;
+
+}
+
+// any child class of Shape can access perimeter
+```
+
+In addition to access modifiers, there’s another way to establish how child classes can interact with inherited parent class members: using the final keyword. If we add final after a parent class method’s access modifier, we disallow any child classes from changing that method. This is helpful in limiting bugs that might occur from modifying a particular method.
+
+Though it is not required, there is an established order when two or more field modifiers are used (eg. public final). To learn more about this read the documentation.
 
 
 
+<br>
+<br>
+<br>
 
 
 
+<h4>On final</h4>
+A method can be declared final to prevent subclasses from overriding or hiding it.
+
+It is a compile-time error to attempt to override or hide a final method.
+
+A private method and all methods declared immediately within a final class (§8.1.1.2) behave as if they are final, since it is impossible to override them.
+
+<br>
+<br>
+<br>
+
+
+<img src ="https://content.codecademy.com/courses/learn-java/revised-2019/polymorphism.gif">
 
 
 
