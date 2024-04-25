@@ -3795,6 +3795,8 @@ public class Debug {
 <br>
 
 
+
+
 <h3>Logic Errors</h3>
 
 Once we have removed the syntax errors and run-time errors, the program runs successfully. But sometimes, the program still doesn’t do what we want it to do or no output is produced. Hmmm…
@@ -3809,6 +3811,42 @@ Some common logic errors:
 <li>Some “silly” mistake in an if statement or a for/while loop</li>
 
 Note: Logic errors don’t have error messages. Sometimes, programmers use a process called test-driven development (TDD), a way to give logic errors error messages and save yourself a lot of headaches!
+
+<br>
+<br>
+
+
+<h3>Debugging Techniques</h3>
+
+If you have examined the code thoroughly, and you are sure the compiler is compiling the right source file, it is time for desperate measures:
+
+1. Divide and conquer: Comment out or temporarily delete half the code to isolate an issue.
+
+If the program compiles now, you know the error is in the code you deleted. Bring back about half of what you removed and repeat.
+If the program still doesn’t compile, the error must be in the code that remains. Delete about half of the remaining code and repeat.
+Tip: In most code editors, one can highlight a block of code and use the keyboard shortcut command + / to comment it out.
+
+2. Print statements for the rescue: Use System.out.println() to check variable/return values at various points throughout the program.
+
+A lot of the time with logic errors, there was a flawed piece of logic, a miscalculation, a missing step, etc. By printing out the values at different stages of the execution flow, you can then hopefully pinpoint where you made a mistake.
+
+
+<h3>Review</h3>
+
+
+Finding bugs is a huge part of a programmer’s life. Don’t be intimidated by them… embrace them. Errors in your code mean you’re trying to do something cool!
+
+In this lesson, we have learned about the three types of Java errors:
+<ul>
+	<li>Syntax errors: Errors found by the compiler.</li>
+	<li>Run-time errors: Errors found by checks in a running program.</li>
+	<li>Logic errors: Errors found by the programmer looking for the causes of erroneous results.</li>
+</ul>
+
+	
+Remember, Google and Stack Overflow are a programmer’s best friends. For some more motivation, check out this blog post: Thinking About Errors in Your Code Differently.
+
+Sometimes once you’ve tracked down a bug, you might still be confused on how to fix it! Whenever you want to know more about how Java works and what it can do, the best place to go is documentation. You can find the Java documentation at Oracle.
 
 
 
