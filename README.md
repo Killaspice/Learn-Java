@@ -3354,6 +3354,8 @@ A private method and all methods declared immediately within a final class (§8.
 <br>
 <br>
 
+
+
 <h3>Introducing Polymorphism</h3>
 
 In Java, if Orange is a Fruit through inheritance, you can then use Orange in the same contexts as Fruit like this:
@@ -3391,6 +3393,11 @@ Note that the reverse situation is not true; you cannot use a generic parent cla
 <br>
 <br>
 <br>
+
+
+
+
+
 
 <h3>Method Overriding</h3>
 
@@ -3473,6 +3480,38 @@ Your account balance is $5000
 <br>
 <br>
 
+
+
+<h3>Using a Child Class as its Parent Class</h3>  
+**KEY Takeaway = override happens at runtime. before that is compiler, compiler sees code, sees child class object instantiated as parent class object, so it sees child class object created to be adult class object 
+
+
+An important facet of polymorphism is the ability to use a child class object where an object of its parent class is expected.
+
+One way to do this explicitly is to instantiate a child class object as a member of the parent class. We can instantiate a CheckingAccount object as a BankAccount like this:
+```
+BankAccount kaylasAccount = new CheckingAccount(600.00);
+```
+
+We can use ```kaylasAccount``` as if it were an instance of ```BankAccount```, in any situation where a ```BankAccount``` object would be expected. (This would be true even if ```kaylasAccount``` were instantiated as a ```CheckingAccount```, but using the explicit child as parent syntax is most helpful when we want to declare objects in bulk.)
+
+It is important to note here that the compiler just considers ```kaylasAccount``` to be any old ```BankAccount```. But because method overriding is handled at runtime, if we call ```printBalance()```, we’ll see something ```CheckingAccount``` specific:
+
+```
+Your checking account balance is $600.00
+```
+
+This is because at runtime, ```kaylasAccount``` is recognized as the ```CheckingAccount``` it is. So, what if ```CheckingAccount``` has a method ```transferToSavings()``` that ```BankAccount``` does not have? Can ```kaylasAccount``` still use that method?
+
+Well, no. The compiler believes that ```kaylasAccount``` is just a ```BankAccount``` that doesn’t have some fancy child class ```transferToSavings()``` method, so it would throw an error.
+
+
+<br>
+<br>
+
+
+
+
 <h3>Child Classes in Arrays and ArrayLists</h3>
 
 Usually, when we create an array or an ArrayList, the list items all need to be the same type. But polymorphism puts a new spin on what is considered the same type…
@@ -3507,7 +3546,38 @@ In the code above, we were able to call ```attack()``` on each monster in monste
 <a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops">Link to For Each Loop</a>
 
 
+<h3>Child Classes in Method Parameters</h3>
+**Superclass = parent class 
 
+When we call a method that contains parameters, the arguments we place in our method call must match the parameter type. Similar to the previous exercise, polymorphism gives us a little more flexibility with the arguments we can use.
+
+If we use a superclass reference as a method parameter, we can call the method using subclass reference arguments!
+
+For example, imagine the class ScaryStory, whose constructor takes in a reference to the Monster class:
+```
+class ScaryStory {
+  Monster monster;
+  String setting;
+
+  public ScaryStory(Monster antagonist, String place) {
+    monster = antagonist;
+    setting = place;
+  }
+
+  public void tellStory(){
+    System.out.println("Once upon a time, " + monster.name + " was at " + setting + " looking to scare some mortals.");
+  }
+
+  public static void main(String[] args) {
+    Monster dracula;
+    dracula = new Vampire("Dracula");
+    ScaryStory countDracula = new ScaryStory(dracula, "Dracula Castle");
+    countDracula.tellStory();
+  }
+}
+```
+
+In the main() method, we used a reference of the class Vampire as our argument even though the constructor requested an object of class Monster. This is allowed because Vampire is a subclass of the Monster class.
 
 
 
