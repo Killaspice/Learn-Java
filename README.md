@@ -3849,6 +3849,46 @@ Remember, Google and Stack Overflow are a programmer’s best friends. For some 
 Sometimes once you’ve tracked down a bug, you might still be confused on how to fix it! Whenever you want to know more about how Java works and what it can do, the best place to go is documentation. You can find the Java documentation at Oracle.
 
 
+<br>
+<br>
+<br>
+
+
+
+<h2>2D ARRAYS: JAVA</h2>
+
+<h3>Introduction to 2D Arrays</h3>
+
+As we have learned previously, an array is a group of data consisting of the same type. This means that we can have an array of primitive data types (such as integers):
+```
+[1, 2, 3, 4, 5]
+```
+We can even have an array of Objects. For example, the following example shows an array of String Objects:
+```
+["hello", "world", "how", "are", "you"]
+```
+In Java, arrays are considered Objects; therefore, we can also have an array of arrays:
+```
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+
+These are called 2D arrays since we can logically view them as a two-dimensional matrix of values containing both rows and columns.
+
+<img src="https://static-assets.codecademy.com/Paths/ap-computer-science/TwoDArrays/two_d_arrays.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>
