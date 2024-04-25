@@ -3424,11 +3424,11 @@ class CheckingAccount extends BankAccount {
 }
 ```
 
-Notice that in order to properly override printBalance(), in CheckingAccount the method has the following in common with the corresponding method in BankAccount:
+Notice that in order to properly override ```printBalance()```, in ```CheckingAccount``` the method has the following in common with the corresponding method in ```BankAccount```:
 
-Method name
-Return type
-Number and type of parameters
+<li>Method name</li>
+<li>Return type</li>
+<li>Number and type of parameters</li>
 
 
 You may have also noticed the ```@Override``` keyword above ```printBalance()``` in ```CheckingAccount```. This annotation informs the compiler that we want to override a method in the parent class. If the method doesn’t exist in the parent class, we’ll get a helpful error when we compile the program.
