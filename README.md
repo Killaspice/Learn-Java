@@ -3354,6 +3354,37 @@ A private method and all methods declared immediately within a final class (§8.
 <br>
 <br>
 
+<h3>Introducing Polymorphism</h3>
+
+In Java, if Orange is a Fruit through inheritance, you can then use Orange in the same contexts as Fruit like this:
+
+```
+String makeJuice(Fruit fruit) {    // looking for a fruit...
+
+  return "Apple juice and " + fruit.squeeze();
+
+}
+
+// inside main()
+Orange orange = new Orange();
+System.out.println(juicer.makeJuice(orange));  // and i put in orange
+```
+
+Wait, how does that work?
+
+This is because Java incorporates the object-oriented programming principle of polymorphism. Polymorphism, which derives from Greek meaning “many forms”, allows a child class to share the information and behavior of its parent class while also incorporating its own functionality.
+
+The main advantages of polymorphic programming:
+
+<ul>
+<li>Simplifying syntax</li>
+<li>Reducing cognitive overload for developers</li>
+<li>These benefits are particularly helpful when we want to develop our own Java packages for other developers to import and use.</li>
+</ul>
+
+For example, the built-in operator + can be used for both doubles and ints. To the computer, the + means something like addDouble() for one and addInt() for the other, but the creators of Java (and of other languages) didn’t want to burden us as developers with recalling each individual method.
+
+Note that the reverse situation is not true; you cannot use a generic parent class instance where a child class instance is required. So an Orange can be used as a Fruit, but a Fruit cannot be used as an Orange.
 
 <img src ="https://content.codecademy.com/courses/learn-java/revised-2019/polymorphism.gif">
 
