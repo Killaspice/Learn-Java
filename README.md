@@ -3756,9 +3756,46 @@ try {
 
 You can learn more about exceptions and handling them here.
 
+Qn: Put the code that you think will cause an ArithmeticException into a try block. Create a catch block that catches the ArithmeticException and prints the error message to the terminal.
+
+```
+public class Debug {
+
+  public static void main(String[] args) {
+    
+    int width = 0;
+    int length = 40;
+    
+    
+
+    try {
+     //  Block of code to try
+      int ratio = length / width;
+
+    } catch (NullPointerException e) {
+
+      //  Code to handle a NullPointerException
+     System.err.println("NullPointerException: " + e.getMessage());
+
+    } catch (ArithmeticException e) {
+
+     //  Code to handle an ArithmeticException
+       System.err.println("ArithmeticException: " + e.getMessage());
+    }
+
+
+  }
+  
+}
+```
 
 <br>
 <br>
+
+
+
+
+
 
 
 </body>
