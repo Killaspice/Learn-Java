@@ -3544,7 +3544,7 @@ In the code above, we were able to call ```attack()``` on each monster in monste
 <br>
 
 <a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops">Link to For Each Loop</a>
-
+<a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#calling-static-methods">Link to Static Methods</a>
 
 <h3>Child Classes in Method Parameters</h3>
 **Superclass = parent class 
