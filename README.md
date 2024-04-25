@@ -3874,6 +3874,29 @@ In Java, arrays are considered Objects; therefore, we can also have an array of 
 
 These are called 2D arrays since we can logically view them as a two-dimensional matrix of values containing both rows and columns.
 
+
+Additionally, we can have 2D arrays which are not rectangular in shape. These are called jagged arrays:
+```
+[['a', 'b', 'c', 'd'], ['e', 'f'], ['g', 'h', 'i', 'j'], ['k']]
+```
+
+<img src="https://static-assets.codecademy.com/Paths/ap-computer-science/TwoDArrays/jagged.png">
+
+We won’t be covering jagged arrays in this lesson, but be aware that 2D arrays don’t always have to have the same number of subarrays in each array. This would cause the shape of the 2D array to not be rectangular.
+
+Why use 2D arrays?
+
+<ul>
+	<li>It is useful to use 2D arrays for situations where you need to store and organize data by rows and columns. For example, exporting data to be used in a spreadsheet.</li>
+	<li>You can condense multiple arrays down to a single variable using 2D arrays. For example, if you have 10 students who each have 10 different quiz grades, you can represent the overall class quiz grades as a 	10x10 2D array by having each row represent a student and each column represent one of the quizzes they have taken.</li>
+	<li>2D arrays can be used to map out data. For example, if you want to create a game of tic-tac-toe, you can represent the game state by using a 3x3 2D array.</li>
+</ul>
+
+
+
+There are many other ways to use 2D arrays depending on the application. The only downside is that once initialized, no new rows or columns can be added or removed without copying the data to a newly initialized 2D array. This is because the length of arrays in Java are immutable (unable to be changed after creation).
+
+
 <img src="https://static-assets.codecademy.com/Paths/ap-computer-science/TwoDArrays/two_d_arrays.png">
 
 
