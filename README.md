@@ -3399,7 +3399,7 @@ Note that the reverse situation is not true; you cannot use a generic parent cla
 
 
 
-<h3>Method Overriding</h3>
+<h3>Method Overriding</h3> // How to child class method override parent class method
 
 One common use of polymorphism with Java classes is something we mentioned earlier — overriding parent class methods in a child class. Like the + operator, we can give a single method slightly different meanings for different classes. This is useful when we want our child class method to have the same name as a parent class method but behave a bit differently in some way.
 
