@@ -4489,7 +4489,8 @@ Although we have already looked at how 2D array objects are stored in Java, this
 
 Here is a diagram which shows the path through the 2D array:
 
-Traversing across each row
+<img src="https://static-assets.codecademy.com/Paths/ap-computer-science/TwoDArrays/row_major.png">
+
 
 This path is created by the way we set up our nested loops. In the previous exercise, we looked at how we can traverse the 2D array by having nested loops in a variety of formats, but if we want to control the indices, we typically use standard for loops.
 
@@ -4544,6 +4545,8 @@ Here is a diagram showing which loop accesses which part of the 2D array for row
 
 Starting at the first row, looping through each column in that row. When the end of the row is reached, we move on to the next row
 
+<img src ="https://static-assets.codecademy.com/Paths/ap-computer-science/TwoDArrays/row_major_loop.png">
+
 Why Use Row-Major Order?
 
 Row-major order is important when we need to process data in our 2D array by row. You can be provided data in a variety of formats and you may need to perform calculations of rows of data at a time instead of individual elements. Let’s take one of our previous checkpoint exercises as an example. You were asked to calculate the sum of the entire 2D array of integers by traversing and accessing each element. Now, if we wanted to calculate the sum of each row, or take the average of each row, we can use row-major order to access the data in the order that we need. Let’s look at an example!
@@ -4583,7 +4586,11 @@ Row: 5, Sum: 1.06
 An interesting thing to note is that, due to the way 2D arrays are structured in Java, enhanced for loops are always in row-major order. This is because an enhanced for loop iterates through the elements of the outer array which causes the terminating condition to be the length of the 2D array which is the number of rows.
 
 
+Qn 1. You are provided with some runner lap data. Take a look at the loops we’re using to iterate through this 2D array. Replace the incorrect for loop headers to perform row-major traversal. Use the iterators outer and inner for the outer and inner loops. <br>
 
+Qn 2. Enter the missing line of code within the nested for loop to sum up the values for each row in the runner data. We’ve already created a variable named runnerTime that you can use to sum these values.<br>
+
+Qn 3. We’ve given you a variable named averageVal that currently stores 0. Edit that line of code to find the average time of each runner.
 
 ```
 public class RowMajor {
