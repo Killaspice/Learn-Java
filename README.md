@@ -1783,7 +1783,7 @@ for (String inventoryItem : inventoryItems) {
 
 Our enhanced loop contains two items: an enhanced for loop variable (inventoryItem) and a list to traverse through (inventoryItems).
 
-<strong>We can read the : as ```“in”``` like this: ```for each inventoryItem (which should be a String) in inventoryItems, print inventoryItem.```</strong>
+<strong>We can read the ```:``` as ```“in”``` like this: ```for each inventoryItem (which should be a String) in inventoryItems, print inventoryItem.```</strong>
 
 If we try to assign a new value to the enhanced for loop variable, the value stored in the array or ArrayList will not change. This is because, for every iteration in the enhanced loop, the loop variable is assigned a copy of the list element.
 
