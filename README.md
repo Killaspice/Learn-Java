@@ -4327,13 +4327,13 @@ We don’t have to only use regular for loops for traversing 2D arrays. We can u
 We have gone over how to think about 2D array traversal in terms of arrays of arrays, but there are two main ways of thinking about traversal in terms of rows and columns. These are called row-major order and column-major order.
 
 
-Qn 1. Store the number of subarrays of intMatrix into an int variable called numSubArrays. If you want to confirm your work, print that number after creating it. You should expect to see the number of rows in the 2D array.
+Qn 1. Store the number of subarrays of intMatrix into an int variable called numSubArrays. If you want to confirm your work, print that number after creating it. You should expect to see the number of rows in the 2D array. <br>
 
-Qn 2. Store the length of the subarrays using the first subarray in intMatrix. Store it in a variable called subArrayLength. This should be an int.
+Qn 2. Store the length of the subarrays using the first subarray in intMatrix. Store it in a variable called subArrayLength. This should be an int. <br>
 
-Qn 3. Store the number of columns in intMatrix into a variable called columns and the number of rows in intMatrix into a variable called rows.
+Qn 3. Store the number of columns in intMatrix into a variable called columns and the number of rows in intMatrix into a variable called rows. <br>
 
-Qn 4. Replace the outer and inner for loop headers to iterate through the entire 2D array. Use the iterators i for the outer loop and j for the inner loop. Also, add a line of code which calculates the sum of all of the elements in the 2D array.
+Qn 4. Replace the outer and inner for loop headers to iterate through the entire 2D array. Use the iterators i for the outer loop and j for the inner loop. Also, add a line of code which calculates the sum of all of the elements in the 2D array. <br>
 
 ```
 public class Introduction {
@@ -4437,8 +4437,9 @@ Notice how we can use different loop types for traversal, but still receive the 
 Let’s work some example problems using different loop types!
 
 
-Qn 1. Use nested enhanced for loops to calculate the total number of characters in the ```wordData``` 2D array and print the result to the console. (Get the string .length() of each element)
-Qn 2. Using nested while loops, iterate through all of the elements in the 2D array and print them to the console using the format: word [row][column]. The print statement has been provided (you will need to modify it if you use iterators other than i and j).
+Qn 1. Use nested enhanced for loops to calculate the total number of characters in the ```wordData``` 2D array and print the result to the console. (Get the string .length() of each element)<br>
+
+Qn 2. Using nested while loops, iterate through all of the elements in the 2D array and print them to the console using the format: word [row][column]. The print statement has been provided (you will need to modify it if you use iterators other than i and j). <br>
 
 ```
 public class LoopPractice {
