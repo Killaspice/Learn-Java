@@ -1,7 +1,13 @@
 # Learn-Java
 <body>
 
-  <h3>Introduction to Java</h3>
+<a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops">Link to For Each Loop</a> <br>
+<a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#calling-static-methods">Link to Static Methods</a> <br>
+<a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#method-overriding">How to child class method override parent class method</a> <br>
+<a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#length">Link to Length property</a><br>
+
+
+<h3>Introduction to Java</h3>
 
 Welcome to the world of Java programming!
 
@@ -3548,6 +3554,7 @@ In the code above, we were able to call ```attack()``` on each monster in monste
 <a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops">Link to For Each Loop</a> <br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#calling-static-methods">Link to Static Methods</a> <br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#method-overriding">How to child class method override parent class method</a> <br>
+Link to Length property</a><br>
 
 <h3>Child Classes in Method Parameters</h3>
 **Superclass = parent class 
@@ -4265,8 +4272,9 @@ You might be wondering how we can figure out the number of iterations needed in 
 
 In order to find the number of elements in the outer array, we just need to get the length of the 2D array.
 
-<a href ="">Link to Length</a>
-<strong>** length is a property of arrays that returns the number of elements in that array.</strong>
+<a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#length">Link to Length property</a><br>
+<strong>** length is a property of arrays that returns the number of elements in that array. it does not return you the actual subarray element content at row 0 aka letterBlock[0]. </strong>
+
 
 ```
 int lengthOfOuterArray = letterBlock.length;
