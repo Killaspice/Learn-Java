@@ -4264,6 +4264,10 @@ Since we know we can use a loop to retrieve each of the subarrays stored in the 
 You might be wondering how we can figure out the number of iterations needed in order to fully traverse the 2D array.
 
 In order to find the number of elements in the outer array, we just need to get the length of the 2D array.
+
+<a href ="">Link to Length</a>
+<strong>** length is a property of arrays that returns the number of elements in that array.</strong>
+
 ```
 int lengthOfOuterArray = letterBlock.length;
 ```
