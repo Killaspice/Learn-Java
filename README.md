@@ -4731,14 +4731,13 @@ We will be using the same runner data from the last exercise, but this time we a
 
 
 <h4>Why use times[0].length and not times[outer].length in the outer for loop?</h4>
-
-Avoiding Index Out of Bounds: If we were to use times[outer].length instead of times[0].length for the outer loop condition, we would risk encountering an ArrayIndexOutOfBoundsException if any row in the array has fewer columns than the first row (times[0]).
-
-Using times[0].length ensures that we iterate only up to the number of columns in the first row, preventing such errors.
-Therefore, times[0].length is used in the outer loop to safely iterate over the columns of the two-dimensional array data.
+<ul>
+	<li><strong>Avoiding Index Out of Bounds:</strong> If we were to use times[outer].length instead of times[0].length for the outer loop condition, we would risk encountering an ArrayIndexOutOfBoundsException if any row in the array has fewer columns than the first row (times[0]).</li>
+	<li><strong>Using times[0].length:</strong> Using times[0].length ensures that we iterate only up to the number of columns in the first row, preventing such errors. Therefore, times[0].length is used in the outer loop to safely iterate over the columns of the two-dimensional array data.</li>
 
 By using times[0].length, we are assuming that all rows in the data array have the same number of columns as the first row (times[0]). 
 This is a common assumption when dealing with rectangular two-dimensional arrays, where all rows have the same length.
+</ul>
 
 
 
