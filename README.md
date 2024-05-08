@@ -3554,7 +3554,7 @@ In the code above, we were able to call ```attack()``` on each monster in monste
 <a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops">Link to For Each Loop</a> <br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#calling-static-methods">Link to Static Methods</a> <br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#method-overriding">How to child class method override parent class method</a> <br>
-Link to Length property</a><br>
+<a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#length">Link to Length property</a><br>
 
 <h3>Child Classes in Method Parameters</h3>
 **Superclass = parent class 
@@ -5124,7 +5124,7 @@ public class Review {
 
 /* for (int i = 0; i < scores.length; i++) {      // Row-major order
             for (int j = 0; j < 2; j++) {
-                if (scores[i][j] != -1) {
+                if (scores[i][j] != -1) {   
                     newScores[i][j] = scores[i][j];
                 }
             }
