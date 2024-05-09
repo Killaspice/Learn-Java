@@ -201,7 +201,9 @@ After the assignment operator, (=), we call the constructor method, Car(), using
 
 Keep Reading: AP Computer Science A Students
 
-If we print the value of the variable ferrari we would see its memory address: Car@76ed5528 In the above example, our variable ferrari is declared as a reference data type rather than with a primitive data type like int or boolean. This means that the variable holds a reference to the memory address of an instance. During its declaration, we specify the class name as the variable’s type, which in this case is Car.
+If we print the value of the variable ferrari we would see its memory address: Car@76ed5528 
+
+<strong>In the above example, our variable ferrari is declared as a reference data type rather than with a primitive data type like int or boolean. This means that the variable holds a reference to the memory address of an instance. During its declaration, we specify the class name as the variable’s type, which in this case is Car. </strong>
 
 If we use a special value, null, we can initialize a reference-type variable without giving it a reference. If we were to assign null to an object, it would have a void reference because null has no value.
 
@@ -222,7 +224,54 @@ It’s important to understand that using a null reference to call a method or a
 <br>
 
 
+<h3>Classes: Instance Fields</h3>
 
+
+A real car has characteristics such as brand, model, year, color, etc. In a Java object representing a car, these characteristics are represented by instance fields or instance variables.
+
+In the last exercise, we created an object, but our object has no characteristics! We’ll add characteristics to our class by including instance fields or instance variables.
+
+Let’s revisit the Car class example.
+
+We want our Car objects to have different colors, so we declare an instance field called color. Instance variables are often characterized by their “has-a” relationship with the object. For example, a Car “has-a” color, “has-a” make, “has-a” model name, and “has-a” model year.
+
+Think about what qualities other than color a car might have.
+
+```
+public class Car { 
+
+ /* 
+ declare fields inside the class 
+ by specifying the type and name 
+ */ 
+
+ public String color; 
+ public int year; 
+ public String modelName; 
+ public String make; 
+
+ public Car() { 
+   /*  
+   instance fields available in 
+   scope of the constructor method 
+   */ 
+ } 
+} 
+```
+
+Instance variables are specific to each instance of the class which means that each object created from the class will have its own copy of these variables. These fields can be set in the following three ways:
+
+If they are public, they can be set like this ```instanceName.fieldName = someValue;```
+
+They can be set by class methods.
+
+They can be set by the constructor method (shown in the next exercise).
+
+Let’s practice this concept by adding characteristics to a class that represents a dog.
+
+
+<br>
+<br>
 
 <h3>Classes: Review</h3>
 
