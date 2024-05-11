@@ -8,7 +8,9 @@
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#classes-constructors">Link to Constructors: rmb, an object/instance is a reference data type</a><br> 
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#scope">Link to method scope: rmb, variables within methods only exist within the scope of those methods</a><br>
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#returns">Link to Return</a><br>
-<a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#the-tostring-method">Link to ToString method</a><br>
+<a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#the-tostring-method">Link to ToString method</a><br>\
+
+// Static Variables belong to the class itself, instead of an object of the class. Like fixed variable eg. animal species
 
 
 <h3>Introduction to Java</h3>
