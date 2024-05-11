@@ -279,7 +279,7 @@ In Java, parameters are placeholders that we can use to pass information to a me
 
 Since the constructor is a method, we can include parameters to assign values to instance fields.
 
-Here the Car constructor has a parameter: String carColor:
+Here the Car constructor has a parameter: ```String carColor```:
 ```
 public class Car { 
   public String color; 
@@ -293,11 +293,11 @@ public class Car {
 ```
 Now, when we create a new instance of the Car class and pass in a string value to the constructor, it will be stored in the parameter carColor. Inside the constructor, we can use this passed value however we want. In our example, we assign the value stored in carColor to the instance field color.
 
-A method can be characterized by its signature, which is the name, number of, and parameters of the method. In the above example, the signature is Car(String carColor).
+A method can be characterized by its signature, which is the name, number of, and parameters of the method. In the above example, the signature is ```Car(String carColor)```.
 
 Later, we’ll learn how to pass values into a method!
 
-There are two types of parameters: formal and actual. The parameter we defined in the above example, String carColor, is a formal parameter. We can think of them as variables that will store the data that is passed into a method. It specifies the type and name of the data.
+There are two types of parameters: formal and actual. The parameter we defined in the above example, ```String carColor```, is a formal parameter. We can think of them as variables that will store the data that is passed into a method. It specifies the type and name of the data.
 
 We’ll learn about actual parameters in the next exercise.
 
@@ -328,11 +328,11 @@ public class Car {
 } 
 ```
 
-The first constructor has two parameters: String carColor and int milesPerGallon.
+The first constructor has two parameters: ```String carColor``` and ```int milesPerGallon```.
 
-While the second one has these: boolean electricCar and int milesPerGallon.
+While the second one has these: ```boolean electricCar``` and ```int milesPerGallon```.
 
-The values will help the compiler to decide which constructor to use. For example, Car myCar = new Car(true, 40) will be created by the second constructor because the arguments match the type and order of the second constructor’s signature.
+The values will help the compiler to decide which constructor to use. For example, ```Car myCar = new Car(true, 40)``` will be created by the second constructor because the arguments match the type and order of the second constructor’s signature.
 
 When we don’t define the constructor, the Java compiler creates a default constructor that assigns default values to an instance. Default values can be created by assigning values to the instance fields during their declaration:
 ```
@@ -382,7 +382,7 @@ class Main{
 ```
 When passing in values to a constructor, just like an ordinary method, the type of the value must match the type of the parameter.
 
-In the code, we pass the String value “red” to the constructor method call: new Car("red"). The parameter carColor of type String now refers to the value passed in during the method call, which is “red”.
+In the code, we pass the String value “red” to the constructor method call: ```new Car("red")```. The parameter ```carColor``` of type String now refers to the value passed in during the method call, which is “red”.
 
 The field color of the object ferrari now has a value of “red”.
 
