@@ -273,6 +273,189 @@ Let’s practice this concept by adding characteristics to a class that represen
 <br>
 <br>
 
+<h3>Classes: Constructor Parameters</h3>
+
+In Java, parameters are placeholders that we can use to pass information to a method.
+
+Since the constructor is a method, we can include parameters to assign values to instance fields.
+
+Here the Car constructor has a parameter: String carColor:
+```
+public class Car { 
+  public String color; 
+
+  // constructor method with a parameter 
+  public Car(String carColor) { 
+    // parameter value assigned to the field 
+    color = carColor; 
+  } 
+} 
+```
+Now, when we create a new instance of the Car class and pass in a string value to the constructor, it will be stored in the parameter carColor. Inside the constructor, we can use this passed value however we want. In our example, we assign the value stored in carColor to the instance field color.
+
+A method can be characterized by its signature, which is the name, number of, and parameters of the method. In the above example, the signature is Car(String carColor).
+
+Later, we’ll learn how to pass values into a method!
+
+There are two types of parameters: formal and actual. The parameter we defined in the above example, String carColor, is a formal parameter. We can think of them as variables that will store the data that is passed into a method. It specifies the type and name of the data.
+
+We’ll learn about actual parameters in the next exercise.
+
+For now, let’s practice working with constructor parameters.
+
+Keep Reading: AP Computer Science A Students
+
+A class can have multiple constructors. We can differentiate them based on their parameters. The signature helps the compiler to differentiate between different methods.
+
+For example, here we have defined two constructors:
+```
+public class Car { 
+  public String color; 
+  public int mpg; 
+  public boolean isElectric; 
+
+  // constructor 1 
+  public Car(String carColor, int milesPerGallon) { 
+    color = carColor; 
+    mpg = milesPerGallon; 
+  } 
+
+  // constructor 2 
+  public Car(boolean electricCar, int milesPerGallon) { 
+    isElectric = electricCar; 
+    mpg = milesPerGallon; 
+  } 
+} 
+```
+
+The first constructor has two parameters: String carColor and int milesPerGallon.
+
+While the second one has these: boolean electricCar and int milesPerGallon.
+
+The values will help the compiler to decide which constructor to use. For example, Car myCar = new Car(true, 40) will be created by the second constructor because the arguments match the type and order of the second constructor’s signature.
+
+When we don’t define the constructor, the Java compiler creates a default constructor that assigns default values to an instance. Default values can be created by assigning values to the instance fields during their declaration:
+```
+public class Car { 
+ public String color = "red"; 
+ public boolean isElectric = false; 
+ public int cupHolders = 4; 
+
+ public static void main(String[] args) { 
+   Car myCar = new Car(); 
+   System.out.println(myCar.color); // Prints: red 
+ } 
+} 
+```
+
+Notice that the color instance field of the myCar object will have a red value because we’ve already defined the default value during the declaration.
+
+
+<br>
+<br>
+
+<h3>Classes: Assigning Values to Instance Fields</h3>
+
+Since the constructor now accepts a parameter, let’s see how we can use this constructor to create an instance of an object with initial values for its fields.
+
+To use the constructor, we call it just as we would an ordinary method and pass in values for the parameters. These values, known as arguments, will be used to initialize the instance fields of the created object.
+
+Let’s revisit our previous example of the Car class.
+```
+public class Car { 
+  public String color; 
+
+  public Car(String carColor) { 
+    // assign parameter value to instance field 
+    color = carColor; 
+  } 
+} 
+```
+
+In this case, when creating a specific instance of Car called ferrari, we pass the string “red” as the value for the carColor parameter.
+```
+class Main{ 
+  public static void main(String[] args){ 
+  Car ferrari = new Car("red"); 
+  } 
+}  
+```
+When passing in values to a constructor, just like an ordinary method, the type of the value must match the type of the parameter.
+
+In the code, we pass the String value “red” to the constructor method call: new Car("red"). The parameter carColor of type String now refers to the value passed in during the method call, which is “red”.
+
+The field color of the object ferrari now has a value of “red”.
+
+Remember, that we can access the fields of an object by using the dot operator like so:
+```
+ferrari.color; // "red" 
+```
+
+Keep Reading: AP Computer Science A Students
+
+An argument refers to the actual values passed during the method call while a parameter refers to the variables declared in the method signature.
+
+When we pass an argument, a copy of the argument value is passed to the parameter rather than the actual variables. This process of calling a method with an argument value is called a call-by-value.
+
+For example, we passed the String value “red” as an argument, but a copy of this value is assigned to the parameter carColor.
+
+
+<br>
+<br>
+
+<h3>Classes: Multiple Fields</h3>
+
+Objects are not limited to a single instance field. We can declare as many fields as necessary for our program’s requirements. To illustrate this, let’s add two more instance fields to our Car instances.
+
+We’ll add a boolean isRunning, which represents whether the car engine is on or not, and an int velocity, which indicates the speed at which the car is traveling.
+
+```
+public class Car { 
+  String color; 
+
+  // new fields! 
+  boolean isRunning; 
+  int velocity; 
+
+  // new parameters that correspond to the new fields 
+  public Car(String carColor, boolean carRunning, int milesPerHour) { 
+    color = carColor; 
+
+    // assign new parameters to the new fields 
+    isRunning = carRunning; 
+    velocity = milesPerHour; 
+  } 
+} 
+
+Public class Main(){ 
+
+  public static void main(String[] args) { 
+    // new values passed into the method call 
+    Car ferrari = new Car("red", true, 27); 
+    Car renault = new Car("blue", false, 70); 
+
+    System.out.println(renault.isRunning); // false 
+    System.out.println(ferrari.velocity); // 27 
+  } 
+} 
+```
+Now, the constructor has two new parameters: boolean carRunning and int speed`.
+
+Remember, it’s important to pass the arguments in the same order as they are listed in the parameters.
+```
+// values match types, no error 
+Car honda = new Car("green", false, 0); 
+
+// values do not match types, error! 
+Car junker = new Car(true, 42, "brown"); 
+```
+Let’s practice this concept!
+
+
+<br>
+<br>
+
+
 <h3>Classes: Review</h3>
 
 Java is an object-oriented programming language where every program has at least one class. Programs are often built from many classes and objects, which are the instances of a class.
