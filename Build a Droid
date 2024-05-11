@@ -1,0 +1,78 @@
+public class Droid{
+
+String name;
+int batteryLevel;
+
+public Droid (String droidName) {
+  name = droidName;
+  batteryLevel = 100;
+}
+
+
+public void performTask(String task){
+  if (batteryLevel != 0){
+    System.out.println(name +" is performing task: " + task);
+    batteryLevel -= 10;
+  }
+  else{
+    System.out.println("Error, " + name + " needs to recharge, battery level is: " + batteryLevel);
+  }
+}
+
+public String toString(){
+  return "Hello, I’m the droid: " + name;
+}
+
+public void energyReport(){
+  int energyLevel = batteryLevel;
+  System.out.println(name + "energy level is: "+ energyLevel);
+}
+
+
+ // Method to get battery level
+    public int getBatteryLevel() {
+        return batteryLevel;
+    }
+
+    // Method to set battery level
+    public void setBatteryLevel(int batteryLevel) {
+        this.batteryLevel = batteryLevel;
+    }
+
+
+public void energyTransfer(Droid droid1, Droid droid2){
+    int temp = droid1.getBatteryLevel();
+    droid1.setBatteryLevel(droid2.getBatteryLevel());
+    droid2.setBatteryLevel(temp);
+    System.out.println("Transferring energy from Droid "+droid2.name+" to Droid "+droid1.name);
+}
+
+
+public static void main(String[] args){
+  Droid codeyDroid = new Droid("Codey");
+  System.out.println(codeyDroid);
+
+  codeyDroid.performTask("dancing");
+  codeyDroid.performTask("flying");  
+  codeyDroid.performTask("flying"); 
+  codeyDroid.performTask("flying"); 
+  codeyDroid.performTask("flying"); 
+  codeyDroid.performTask("flying"); 
+  codeyDroid.performTask("flying"); 
+  codeyDroid.performTask("flying"); 
+
+  codeyDroid.energyReport();
+
+  codeyDroid.performTask("swimming"); 
+  codeyDroid.performTask("scanning"); 
+  codeyDroid.performTask("scanning"); 
+
+  Droid kateDroid = new Droid("Kate");
+
+  kateDroid.energyTransfer(codeyDroid, kateDroid);
+
+  kateDroid.energyReport();
+  codeyDroid.energyReport();
+}
+
+}
