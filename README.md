@@ -709,10 +709,184 @@ public static void main(String[] args){
 
 <br>
 
+<h3>Reassigning Instance Fields</h3>
+
+Earlier, we thought about a Savings Account as a type of object we could represent in Java.
+
+Two of the methods we need are depositing and withdrawing:
+```
+public class SavingsAccount{
+  double balance;
+  public SavingsAccount(double startingBalance){
+    balance = startingBalance;
+  }
+
+  public void deposit(double amountToDeposit){
+     //Add amountToDeposit to the balance
+  }
+
+  public void withdraw(double amountToWithdraw){
+     //Subtract amountToWithdraw from the balance
+  }
+
+  public static void main(String[] args){
+
+  }
+}
+```
+
+These methods would change the value of the variable balance. We can reassign balance to be a new value by using our assignment operator, ```=```, again.
+```
+public void deposit(double amountToDeposit){
+  double updatedBalance = balance + amountToDeposit;
+  balance = updatedBalance;
+}
+```
+
+Now, when we call ```deposit()```, it should change the value of the instance field balance:
+```
+public static void main(String[] args){
+  SavingsAccount myAccount = new SavingsAccount(2000);
+  System.out.println(myAccount.balance);
+  myAccount.deposit(100);
+  System.out.println(myAccount.balance);
+}
+```
+This code first prints 2000, the initial value of ```myAccount.balance```, and then prints 2100, which is the value of myAccount.balance after the ```deposit()``` method has run.
+
+Changing instance fields is how we change the state of an object and make our objects more flexible and realistic.
+
+<br>
+
+
+<h3>Returns</h3>
+
+Remember, variables can only exist in the scope that they were declared in. We can use a value outside of the method it was created in if we return it from the method.
+
+We return a value by using the keyword return:
+```
+public int numberOfTires() {
+   int tires = 4;
+   // return statement
+   return tires;
+}
+```
+
+This method, called ```numberOfTires()```, returns 4. Once the return statement is executed, the compiler exits the function. Any code that exists after the return statement in a function is ignored.
+
+In past exercises, when creating new methods, we used the keyword void. Here, we are replacing void with int, to signify that the return type is an int.
+
+The ```void``` keyword (which means “completely empty”) indicates that no value is returned after calling that method.
+
+A non-void method, like ```numberOfTires()``` returns a value when it is called. We can use datatype keywords (such as int, char, etc.) to specify the type of value the method should return. The return value’s type must match the return type of the method. If the return expression is compatible with the return type, a copy of that value gets returned in a process known as return by value.
+
+Unlike void methods, non-void methods can be used as either a variable value or as part of an expression like so:
+```
+public static void main(String[] args){
+    Car myCar = new Car("red");
+    int numTires = myCar.numberOfTires();
+}
+```
+
+Within ```main()```, we called the ```numberOfTires()``` method on myCar. Since the method returns an int value of 4, we store the value in an integer variable called numTires. If we printed numTires, we would see 4.
+
+Keep Reading: AP Computer Science A Students
+
+We learned how to return primitive values from a method, but what if we wanted our method to return an object? Returning an object works a little differently than returning a primitive value. When we return a primitive value, a copy of the value is returned; however, when we return an object, we return a reference to the object instead of a copy of it.
+
+Let’s create a second class, carLot, that takes in a Car as a parameter and contains a method which returns a Car object.
+```
+class CarLot {
+    Car carInLot;
+    public CarLot(Car givenCar) {
+        carInLot = givenCar;
+    }
+
+    public Car returnACar() {
+        // return Car object
+        return carInLot;
+    }
+
+    public static void main(String[] args) {
+        Car myCar = new Car("red", 70);
+        System.out.println(myCar); 
+        CarLot myCarLot = new CarLot(myCar);
+        System.out.println(myCarLot.returnACar());
+    }
+}
+```
+
+
+This code outputs the same memory address because myCar and carInLot have the same reference value:
+```
+Car@2f333739
+Car@2f333739
+```
+
+<br>
+
+<h3>The toString() Method</h3>
+
+When we print out Objects, we often see a String that is not very helpful in determining what the Object represents. In the last lesson, we saw that when we printed our Store objects, we would see output like:
+```
+Store@6bc7c054
+```
+where Store is the name of the object and ```6bc7c054``` is its position in memory.
+
+This doesn’t tell us anything about what the Store sells, the price, or the other instance fields we’ve defined. We can add a method to our classes that makes this printout more descriptive.
+
+When we define a ```toString()``` method for a class, we can return a String that will print when we print the object:
+```
+class Car {
+
+    String color;
+
+    public Car(String carColor) {
+        color = carColor;
+    }
+
+    public static void main(String[] args){
+        Car myCar = new Car("red");
+        System.out.println(myCar);
+    }
+
+   public String toString(){
+       return "This is a " + color + " car!";
+   }
+}
+```
+
+When this runs, the command ```System.out.println(myCar)``` will print ```This is a red car!```, which tells us about the Object myCar.
+
+<br>
+
+<h3>Review</h3>
+
+Great work! Methods are a powerful way to abstract tasks away and make them repeatable. They allow us to define behavior for classes, so that the Objects we create can do the things we expect them to. Let’s review everything we have learned about methods so far.
+
+<ul>
+	<li>Defining a method : Method declarations will declare a method’s return type, name, and parameters</li>
+	<li>Calling a method : Methods are invoked with a . and ()</li>
+	<li>Parameters : Inputs to the method and their types are declared in parentheses in the method signature</li>
+	<li>Changing Instance Fields : Methods can be used to change the value of an instance field</li>
+	<li>Scope : Variables only exist within the domain that they are created in</li>
+	<li>Return : The type of the variables that will be output are declared in the method declaration</li>
+</ul>
+
+As you move through more Java material, it will be helpful to frame the tasks you create in terms of methods. This will help you think about what inputs you might need and what output you expect.
+
+
+<br>
+<br>
+
+
+
+
+
+
 
 
 <h2>Conditions & Control flow</h2>
-
 
 <h3>If-Then-Else-If</h3>
 
@@ -775,8 +949,8 @@ This chained conditional statement has two conditions that evaluate true. Becaus
 
 Note: Only one of the code blocks will run.
 
-
-
+<br>
+<br>
 
 
 <h3>Nested Conditional Statements</h3>
