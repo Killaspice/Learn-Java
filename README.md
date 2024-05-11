@@ -491,6 +491,224 @@ public class Dog {
 }
 ```
 
+<br>
+<br>
+
+
+<h2>LEARN JAVA: METHODS</h2>
+
+<h3>Introduction</h3>
+
+In the last lesson, we learned that objects have state and behavior. We have seen how to give objects state through instance fields. Now, we’re going to learn how to create object behavior using methods. Remember our example of a Savings Account.
+
+<img src = "https://content.codecademy.com/courses/learn-java/revised-2019/diagram%20of%20an%20object-02.png">
+<br>
+
+The state tells us what a savings account should know:
+
+The balance of money available
+The behavior tells us what tasks a savings account should be able to perform:
+
+Depositing - increasing the amount available
+Withdrawing - decreasing the amount available
+Checking the balance - displaying the amount available.
+Methods are repeatable, modular blocks of code used to accomplish specific tasks. We have the ability to define our own methods that will take input, do something with it, and return the kind of output we want.
+
+Looking at the example above, recreating a savings account is no easy task. How can one program tackle such a large problem? This is where methods with their ability to accomplish smaller, specific tasks come in handy. Through method decomposition, we can use methods to break down a large problem into smaller, more manageable problems.
+
+Methods are also reusable. Imagine we wrote a sandwich-making program that used 20 lines of code to make a single sandwich. Our program would become very long very quickly if we were making multiple sandwiches. By creating a ```makeSandwich()``` method, we can make a sandwich anytime simply by calling it.
+
+```makeSandwich()``` adds ingredients together to make a sandwich
+
+<img src = "https://content.codecademy.com/courses/learn-java/revised-2019/methods-conceptual.gif">
+<br>
+
+In this lesson, we’ll learn how to create and call our very own methods inside of our programs.
+
+Keep Reading: AP Computer Science A Students
+
+If we were to share this sandwich-making program with another person, they wouldn’t have to understand how makeSandwich() worked. If we wrote our program well, all they would need to know is that if they called ```makeSandwich()```, they would receive a sandwich. This concept is known as procedural abstraction: knowing what a method does, but not how it accomplishes it.
+
+
+<h3>Defining Methods</h3>
+
+If we were to define a ```checkBalance()``` method for the Savings Account example we talked about earlier, it would look like the following:
+```
+public void checkBalance(){
+  System.out.println("Hello!");
+  System.out.println("Your balance is " + balance);
+}
+```
+
+The first line, ```public void checkBalance()```, is the method declaration. It gives the program some information about the method:
+
+```public``` means that other classes can access this method. We will learn more about that later in the course.
+The ```void``` keyword means that there is no specific output from the method. We will see methods that are not void later in this lesson, but for now, all of our methods will be void.
+```checkBalance()``` is the name of the method.
+
+Every method has its own unique <strong>method signature</strong> which is composed of the method’s name and its parameter type. In this example, the method signature is ```checkBalance()```.
+
+The two print statements are inside the body of the method, which is defined by the curly braces: ```{``` and ```}```.
+
+Anything we can do in our ```main()``` method, we can do in other methods! All of the Java tools you know, like the math and comparison operators, can be used to make interesting and useful methods.
+
+Keep Reading: AP Computer Science A Students
+
+```checkBalance()``` is considered a non-static method because its signature does not include the keyword ```static``` like the ```main()``` method does. We’ll learn more about non-static methods later in this course.
+
+<br>
+<br>
+
+<h3>Calling Methods</h3>
+
+When we add a non-static method to a class, it becomes available to use on an object of that class. In order to have our methods get executed, we must call the method on the object we created.
+
+Let’s add a non-static ```startEngine()``` method to our Car class from the previous lesson. Inside the ```main()``` method, we’ll call ```startEngine()``` on the ```myFastCar``` object:
+
+```
+class Car {
+
+  String color;
+
+  public Car(String carColor) {
+    color = carColor;
+  }
+
+  public void startEngine() {
+    System.out.println("Starting the car!");
+    System.out.println("Vroom!");
+  }
+
+  public static void main(String[] args){
+    Car myFastCar = new Car("red");
+    // Call a method on an object 
+    myFastCar.startEngine();
+    System.out.println("That was one fast car!");
+  }
+}
+```
+
+Let’s take a closer look at the method call:
+```
+myFastCar.startEngine();
+```
+First, we reference our object myFastCar. Then, we use the dot operator (.) to call the method startEngine(). Note that we must include parentheses () after our method name in order to call it.
+
+If we run the above program, we will get the following output.
+```
+Starting the car!
+Vroom!
+That was one fast car!
+```
+Code generally runs in a top-down order where code execution starts at the top of a program and ends at the bottom of a program; however, methods are ignored by the compiler unless they are being called.
+
+When a method is called, the compiler executes every statement contained within the method. Once all method instructions are executed, the top-down order of execution continues. This is why Starting the car! and Vroom! are outputted before That was one fast car!.
+
+
+<br>
+<br>
+
+<h3>Scope</h3>
+
+A method is a task that an object of a class performs.
+
+We mark the domain of this task using curly braces: ```{```, and ```}```. Everything inside the curly braces is part of the task. This domain is called the scope of a method.
+
+We can’t access variables that are declared inside a method in code that is outside the scope of that method.
+
+Looking at the Car class again:
+```
+class Car {
+  String color;
+  int milesDriven;
+
+  public Car(String carColor) {
+    color = carColor;
+    milesDriven = 0;         
+  }
+
+  public void drive() {
+     String message = "Miles driven: " + milesDriven;
+     System.out.println(message);
+  }
+
+  public static void main(String[] args){
+     Car myFastCar = new Car("red");
+     myFastCar.drive();
+  }
+}
+```
+<strong>The variable message, which is declared and initialized inside of drive, cannot be used inside of ```main()```! It only exists within the scope of the ```drive()``` method.</strong>
+
+However, milesDriven, which is declared at the top of the class, can be used inside all methods in the class, since it is in the scope of the whole class.
+
+
+<br>
+
+<h3>Adding Parameters</h3>
+
+We saw how a method’s scope prevents us from using variables declared in one method in another method. What if we had some information in one method that we needed to pass into another method?
+
+Similar to how we added parameters to constructors, we can customize all other methods to accept parameters. For example, in the following code, we create a ```startRadio()``` method that accepts a double parameter, ```stationNum```, and a String parameter called ```stationName```:
+```
+class Car {
+
+  String color;
+
+  public Car(String carColor) {
+    color = carColor;        
+  }
+
+  public void startRadio(double stationNum, String stationName) {
+    System.out.println("Turning on the radio to " + stationNum + ", " + stationName + "!");
+    System.out.println("Enjoy!");
+  }
+
+  public static void main(String[] args){
+    Car myCar = new Car("red");
+    myCar.startRadio(103.7, "Meditation Station");
+  }
+}
+```
+
+Adding parameter values impacts our method’s signature. Like constructor signatures, the method signature includes the method name as well as the parameter types of the method. The signature of the above method is ```startRadio(double, String)```.
+
+In the ```main()``` method, we call the ```startRadio()``` method on the myCar object and provide a double argument of 103.7 and String argument of "Meditation Station", resulting in the following output:
+```
+Turning on the radio to 103.7, Meditation Station!
+Enjoy!
+```
+
+Note that when we call on a method with multiple parameters, the arguments given in the call must be placed in the same order as the parameters appear in the signature. If the argument types do not match the parameter types, we’ll receive an error.
+
+Keep Reading: AP Computer Science A Students
+
+Through method overloading, our Java programs can contain multiple methods with the same name as long as each method’s parameter list is unique. For example, we can recreate our above program to contain two startRadio() methods:
+```
+// Method 1
+public void startRadio(double stationNum, String stationName) {
+  System.out.println("Turning on the radio to " + stationNum + ", " + stationName + "!");
+  System.out.println("Enjoy!");
+}
+  
+// Method 2
+public void startRadio(double stationNum) {
+  System.out.println("Turning on the radio to " + stationNum + "!");
+}
+
+public static void main(String[] args){
+  Car myCar = new Car("red");
+  // Calls the first startRadio() method
+  myCar.startRadio(103.7, "Meditation Station");
+
+  // Calls the second startRadio() method
+  myCar.startRadio(98.2);
+}
+```
+
+
+<br>
+
 
 
 <h2>Conditions & Control flow</h2>
