@@ -1,0 +1,62 @@
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Playlist {
+
+  // Method to shuffle the song list
+    public static void shuffleSongList(ArrayList<String> songList) {
+        Collections.shuffle(songList);
+    }
+    
+// Method to reverse the song list
+    public static void reverseSongList(ArrayList<String> songList) {
+        Collections.reverse(songList);
+    }
+
+  public static void main(String[] args) {
+    ArrayList<String> desertIslandPlaylist = new ArrayList<String>();
+
+    String[] favoriteSongs = {"Jojo - Too Late", "Eminem - Rap God", "50 cent - Candy Shop", "Beagle", "Poodle", "Bulldog", "Boxer", "Siberian Husky", "Dachshund", "Shih Tzu"};
+
+    System.out.println(favoriteSongs[0]); 
+    System.out.println(favoriteSongs[1]); 
+    System.out.println(favoriteSongs[2]); 
+
+    desertIslandPlaylist.add("song 1");
+    desertIslandPlaylist.add("song 2");
+    desertIslandPlaylist.add("song 3");
+    desertIslandPlaylist.add("song 4");
+    desertIslandPlaylist.add("song 5");
+    System.out.println(desertIslandPlaylist);
+
+    desertIslandPlaylist.addAll(Arrays.asList(favoriteSongs));
+
+    System.out.println(desertIslandPlaylist.size());
+
+    desertIslandPlaylist.remove("Beagle");
+    desertIslandPlaylist.remove("Poodle");
+    desertIslandPlaylist.remove("Bulldog");
+    desertIslandPlaylist.remove("Boxer");
+    desertIslandPlaylist.remove("Siberian Husky");
+    System.out.println(desertIslandPlaylist.size());
+
+    System.out.println(desertIslandPlaylist);
+
+    int SongA = desertIslandPlaylist.indexOf("Jojo - Too Late");
+    int SongB = desertIslandPlaylist.indexOf("Eminem - Rap God");
+    String tempA = "Jojo - Too Late";
+
+    desertIslandPlaylist.set(SongA, "Eminem - Rap God");
+    System.out.println(desertIslandPlaylist);
+
+    desertIslandPlaylist.set(SongB, tempA);
+    System.out.println(desertIslandPlaylist);
+
+    shuffleSongList(desertIslandPlaylist);
+    System.out.println("Shuffled song list: " + desertIslandPlaylist);
+
+    reverseSongList(desertIslandPlaylist);
+    System.out.println("Reversed song list: " + desertIslandPlaylist);
+  }
+}
