@@ -13,8 +13,8 @@
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#string-args">Link to String[] args - java terminal</a><br>
 
 <br>
-<a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#intro-to-arraylist">Link to ArrayList- you need to "import java.util.Arraylist" to use ArrayList</a><br>
-
+<a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#intro-to-arraylist">Link to ArrayList- you need to "import java.util.ArrayList" to use ArrayList</a><br>
+//Unlike arrays, ArrayList can add and remove elements, whereas arrays are fixed once created
 // Static Variables belong to the class itself, instead of an object of the class. Like fixed variable eg. animal species
 
 
