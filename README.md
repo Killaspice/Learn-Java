@@ -12,6 +12,9 @@
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#the-tostring-method">Link to ToString method</a><br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#string-args">Link to String[] args - java terminal</a><br>
 
+<br>
+<a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#intro-to-arraylist">Link to ArrayList- you need to "import java.util.Arraylist" to use ArrayList</a><br>
+
 // Static Variables belong to the class itself, instead of an object of the class. Like fixed variable eg. animal species
 
 
