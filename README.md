@@ -16,7 +16,7 @@
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#intro-to-arraylist">Link to ArrayList- you need to "import java.util.ArrayList" to use ArrayList</a><br>
 // Unlike arrays, ArrayList can add and remove elements, whereas arrays cannot add or remove elements, fixed size once created
 <br>
-// For ArrayList, import java.util.ArrayList. For array, import java.util.Array
+// For ArrayList, ```import java.util.ArrayList```. For arrays, ```import java.util.Arrays```
 <br> 
 // Static Variables belong to the class itself, instead of an object of the class. Like fixed variable eg. animal species
 
