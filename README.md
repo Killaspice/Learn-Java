@@ -1673,15 +1673,28 @@ Using the argument array args that is passed into the main() method of a class.
 ```
 import java.util.Arrays;
 
-public class Classroom {
-  
-  public static void main(String[] args){
-  String[] students = {"Sade", "Alexus", "Sam", "Koma"};
-  double[] mathScores = new double[4];
+public class Main {
 
-  mathScores[0] = 94.5;
-  mathScores[2] = 76.8;
-  System.out.println("The number of students in the class is " + students.length + ".");
+  public static void main(String[] args){
+    
+    String[] students = {"Sade", "Alexus", "Sam", "Koma"};
+    int[] mathScores = new int[4];
+
+    System.out.println(students);
+    System.out.println(Arrays.toString(students));
+    
+
+    mathScores[0] = 64;
+    mathScores[1] = 57;
+    mathScores[2] = 76;
+    mathScores[3] = 98;
+    System.out.println(mathScores);
+    System.out.println("The number of students in the class is " + students.length + ".");
+    System.out.println(Arrays.toString(mathScores));
+
+    System.out.println(students[0] + "... math score: " + mathScores[0]);
+    System.out.println(students[1] + "... math score: " + mathScores[1]);
+// etc
   }
 }
 
