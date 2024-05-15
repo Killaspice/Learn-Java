@@ -3553,8 +3553,8 @@ public class CheckingAccount{
 Bank.java
 
 public class Bank{
-  private CheckingAccount accountOne;
-  private CheckingAccount accountTwo;
+  public CheckingAccount accountOne; 		// have to change from private to public for Main.java to access, else error
+  public CheckingAccount accountTwo;		// have to change from private to public for Main.java to access, else error
 
   public Bank(){
     this.accountOne = new CheckingAccount("Zeus", 100, "1");
@@ -3565,8 +3565,8 @@ public class Bank{
 Main.java
   public static void main(String[] args){
     Bank bankOfGods = new Bank();
-    bankOfGods.accountOne.getAccountInformation();
-    bankOfGods.accountOne.calculateNextMonthInterest();
+    bankOfGods.accountOne.getAccountInformation();	// I changed access modifier to public, else have to write a lot of code in Bank.java
+    bankOfGods.accountOne.calculateNextMonthInterest();		
   }
 
 }
