@@ -2,6 +2,8 @@
 <body>
 
 <a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops">Link to For Each Loop</a> <br>
+<a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#break-and-continue">Link to break and continue, FizzBuzz, eg. check if divisible by 3, print something</a><br>
+<br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#calling-static-methods">Link to Static Methods</a> <br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#writing-your-own-static-methods">Link to .this and static methods. AKA non-static variable .this cannot be referenced from a static context</a><br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#method-overriding">How to child class method override parent class method</a> <br>
@@ -9,9 +11,9 @@
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#classes-constructors">Link to Constructors: rmb, an object/instance is a reference data type</a><br> 
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#scope">Link to method scope: rmb, variables within methods only exist within the scope of those methods</a><br>
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#returns">Link to Return</a><br>
+<br>
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#the-tostring-method">Link to ToString method</a><br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#string-args">Link to String[] args - java terminal</a><br>
-
 <br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#intro-to-arraylist">Link to ArrayList- you need to "import java.util.ArrayList" to use ArrayList</a><br>
 // Unlike arrays, ArrayList can add and remove elements, whereas arrays cannot add or remove elements, fixed size once created
