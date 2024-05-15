@@ -13,6 +13,7 @@
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#scope">Link to method scope: rmb, variables within methods only exist within the scope of those methods</a><br>
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#returns">Link to Return</a><br>
 <br>
+<a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#creating-an-array-explicitly">Link to Array. import java.util.Arrays</a><br>
 <a href ="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#the-tostring-method">Link to ToString method</a><br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#string-args">Link to String[] args - java terminal</a><br>
 <br>
