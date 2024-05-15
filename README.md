@@ -3,7 +3,7 @@
 
 <a href= "https://github.com/agentjimlam/Learn-Java/blob/main/README.md#for-each-loops">Link to For Each Loop</a> <br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#break-and-continue">Link to break and continue, FizzBuzz, eg. check if divisible by 3, print something</a><br>
-<a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#switch-statement">Link to Switch method</a><br>
+<a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#switch-statement">Link to Switch statement. If-Else-If</a><br>
 <br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#calling-static-methods">Link to Static Methods</a> <br>
 <a href="https://github.com/agentjimlam/Learn-Java/blob/main/README.md#writing-your-own-static-methods">Link to .this and static methods. AKA non-static variable .this cannot be referenced from a static context</a><br>
