@@ -23,8 +23,9 @@
 <br>
 // For ArrayList, import java.util.ArrayList. For arrays, import java.util.Arrays
 <br> 
-// Static Variables belong to the class itself, instead of an object of the class. Like fixed variable eg. animal species
-
+// Static Variables belong to the class itself, instead of an object of the class. Like fixed variable shared by ALL objects eg. animal species
+// Unlike static methods, you can still access static variables from a specific object of the class. However, no matter what object you use to access the variable, the value will always be the same. You can think of it as all objects of the class sharing the same variable. 
+// If eg. class ATM and the object myATM both use "public static int totalMoney" as their money variable, every object is gonna have/shares same value of totalMoney, because it is static variable, shared by across all instances/objects of the ATM class.
 
 <h3>Introduction to Java</h3>
 
