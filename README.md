@@ -3452,6 +3452,68 @@ Qn: Let’s implement what we described in the narrative. We’ve written our ``
 
 Then flip back to Bank.java and take a look at the ```main()``` method. We’re calling ```bankOfGods.accountOne.getAccountInformation();```. Will a Bank be able to do this? Run your code to find out.
 
+```
+CheckingAccount.java
+
+public class CheckingAccount{
+  private String name;
+  private int balance;
+  private String id;
+  private double interestRate;
+
+  public CheckingAccount(String inputName, int inputBalance, String inputId){
+    this.name = inputName;
+    this.balance = inputBalance;
+    this.id = inputId;
+    this.interestRate = 0.02;
+  }
+
+  public void getAccountInformation(){
+    System.out.println("Money in account: " + this.getBalance());
+    System.out.println("Next Month's Interest: " + this.calculateNextMonthInterest());
+  }
+
+  private int getBalance(){
+    return this.balance;
+  }
+
+  // Write the calculateNextMonthInterest() here
+  private double calculateNextMonthInterest(){
+    return this.interestRate * this.balance; 
+  }
+}
+
+Bank.java
+
+public class Bank{ 
+  public static void main(String[] args){
+    CheckingAccount accountOne = new CheckingAccount("Zeus", 100, "1");
+    
+    accountOne.getAccountInformation();
+  }
+}
+```
+<br>
+<br>
+
+
+<h3>Review</h3>
+
+Nice work! In this lesson, we dove into some of the more subtle features of classes with a focus on access, encapsulation, and scope. Here are some of the main takeaways from this lesson:
+
+<ul>
+<li>The public and private keywords are used to define what parts of code have access to other classes, methods, constructors, and instance variables.</li>
+<li>Encapsulation is a technique used to keep implementation details hidden from other classes. Its aim is to create small bundles of logic.</li>
+<li>The this keyword can be used to designate the difference between instance variables and local variables.</li>
+<li>Local variables can only be used within the scope that they were defined in.</li>
+<li>The this keyword can be used to call methods when writing classes.</li>
+</ul>
+
+Qn: Here are some ideas that you can experiment with:
+
+- Create a method to close an account.
+- Method to apply fees or charges.
+- Introduce different currencies into the code.
 
 ```
 CheckingAccount.java
@@ -3499,6 +3561,8 @@ public class Bank{
     this.accountTwo = new CheckingAccount("Hades", 200, "2");
   }
 
+
+Main.java
   public static void main(String[] args){
     Bank bankOfGods = new Bank();
     bankOfGods.accountOne.getAccountInformation();
@@ -3508,21 +3572,8 @@ public class Bank{
 }
 
 ```
-<br>
-<br>
-<br>
 
-<h3>Review</h3>
 
-Nice work! In this lesson, we dove into some of the more subtle features of classes with a focus on access, encapsulation, and scope. Here are some of the main takeaways from this lesson:
-
-<ul>
-<li>The public and private keywords are used to define what parts of code have access to other classes, methods, constructors, and instance variables.</li>
-<li>Encapsulation is a technique used to keep implementation details hidden from other classes. Its aim is to create small bundles of logic.</li>
-<li>The this keyword can be used to designate the difference between instance variables and local variables.</li>
-<li>Local variables can only be used within the scope that they were defined in.</li>
-<li>The this keyword can be used to call methods when writing classes.</li>
-</ul>
 
 <br>
 <br>
