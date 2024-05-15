@@ -1193,10 +1193,14 @@ boolean foo = true && !(false || !true)
 
 How does an expression like this get evaluated by the compiler? The order of evaluation when it comes to conditional operators is as follows:
 
-Conditions placed in parentheses - ()
-NOT - !
-AND - &&
-OR - ||
+<ul>
+	<li>Conditions placed in parentheses - ()</li>
+	<li>NOT - !</li>
+	<li>AND - &&</li>
+	<li>OR - ||</li>
+</ul>
+
+	
 Using this information, let’s dissect the expression above to find the value of foo:
 
 true && !(false || !true)
